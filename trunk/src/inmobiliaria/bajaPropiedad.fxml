@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.label.*?>
+<?import javafx.collections.*?>
+
+<BorderPane fx:controller="inmobiliaria.controller.BajaPropiedadController"  xmlns:fx="http://javafx.com/fxml">
+     <top>
+     	<fx:include source="header.fxml"/>
+     </top>
+     <center>
+		<GridPane alignment="top_center" hgap="8" vgap="8" style="-fx-padding: 40 0 0 0">
+            <children>
+            	<Label text="Buscar" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            	<Label text="%common.dueno" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <Label text="%common.calle" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <Label text="%common.calleNro" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <Label text="%common.callePiso" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <Label text="%common.calleDpto" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <Label text="Provincia" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                <Label text="Localidad" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                
+                <Button fx:id="guardar" defaultButton="true" text="%common.buscar" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#processBuscarPropiedad" />
+                <TextField fx:id="nombreDueno" promptText="Nombre del Dueno" GridPane.columnIndex="1" GridPane.rowIndex="1" editable="false" />
+                <TextField fx:id="calle" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <TextField fx:id="calleNro" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <TextField fx:id="callePiso" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <TextField fx:id="calleDpto" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                <TextField fx:id="provincia" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                <TextField fx:id="localidad" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+ 
+                <Button fx:id="guardar" defaultButton="true" text="%common.eliminar" GridPane.columnIndex="1" GridPane.rowIndex="8" onAction="#processEliminar" />
+
+ 
+                <Label fx:id="buttonStatusText" GridPane.columnIndex="1" GridPane.rowIndex="4" style="-fx-text-fill: #ff0000;"/>
+            </children>
+        </GridPane>
+     </center>
+     <bottom>
+     	<fx:include source="footer.fxml" />
+     </bottom>
+</BorderPane>
+ 

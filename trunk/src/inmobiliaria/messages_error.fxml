@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.label.*?>
+
+<BorderPane fx:controller="inmobiliaria.controller.Messages_ErrorController"  xmlns:fx="http://javafx.com/fxml">
+     <top>
+     	<fx:include source="header.fxml"/>
+     </top>
+     <center>
+			<GridPane alignment="top_center" hgap="3" vgap="0" style="-fx-padding: 10 10 10 10" >
+	            <children>
+	                <Label text="%common.messages_error" GridPane.columnIndex="0" GridPane.rowIndex="0" fx:id="error"/>
+	            </children>
+	        </GridPane>
+     </center>
+     <bottom>
+     	<fx:include source="footer.fxml" />
+     </bottom>
+</BorderPane>
+ 

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="inmobiliaria.entities.CuotasInquilinosPersonaInmuebleDueno"  table="cuotas_inquilinos_persona_inmueble_dueno" >
+        <id name="idcuota" column="idcuota">
+			<generator class="increment"/>
+        </id>
+			
+        <property name="nombre" column="nombre"/>
+        <property name="apellido" column="apellido"/>
+        <property name="nombreDueno" column="nombreDueno"/>
+        <property name="apellidoDueno" column="apellidoDueno"/>
+        <property name="mesanio" column="mesanio"/>
+        <property name="valor" column="valor"/>
+        <property name="calle" column="calle"/>
+        <property name="calleNro" column="calleNro"/>
+        <property name="callePiso" column="callePiso"/>
+        <property name="calleDpto" column="calleDpto"/>
+        <property name="idinmueble" column="idinmueble"/>
+        <property name="idalquiler" column="idalquiler"/>
+        <property name="porcentajeDueno" column="porcentajeDueno"/>
+        <property name="idPersonaDueno" column="idPersonaDueno"/>
+        <property name="fecha" column="fecha"/>
+        <property name="fechaInicioContrato" column="fechaInicioContrato"/>
+        <property name="fechaFinContrato" column="fechaFinContrato"/>
+    </class>
+</hibernate-mapping>

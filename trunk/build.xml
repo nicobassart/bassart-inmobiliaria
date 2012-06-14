@@ -1,0 +1,57 @@
+<project name="GestionInmobiliaria" default="default" basedir="." xmlns:fx="javafx:com.sun.javafx.tools.ant">
+	<description></description>
+	<property file="build.properties"/>
+	<target name="default">
+
+
+		<taskdef resource="com/sun/javafx/tools/ant/antlib.xml" uri="javafx:com.sun.javafx.tools.ant" classpath="${javafx.tools.ant.jar}" />
+
+		<fx:application id="idinmobiliaria" name="Inmobiliaria" mainClass="inmobiliaria.App" />
+		<!-- This application has a preloader class  preloaderClass="testpreloader.Preloader" fallbackClass="test.UseMeIfNoFX"  -->
+
+		<fx:resources id="appRes">
+			<fx:fileset dir="dist" includes="Inmobiliaria.jar" />
+			<fx:fileset dir="libs" includes="*.jar" />
+		</fx:resources>
+		
+		<fx:resources id="appRes1">
+			<fx:fileset dir="dist" includes="Inmobiliaria.jar" />
+		</fx:resources>
+
+		<fx:jar destfile="dist/Inmobiliaria.jar">
+			<!-- Define what to launch -->
+			<fx:application refid="idinmobiliaria" />
+
+			<!-- Define what classpath to use -->
+			<fx:resources refid="appRes" />
+
+			<manifest>
+				<attribute name="Implementation-Vendor" value="${application.vendor}" />
+				<attribute name="Implementation-Title" value="${application.title}" />
+				<attribute name="Implementation-Version" value="1.0" />
+			</manifest>
+
+			<!-- Define what files to include -->
+			<fileset dir="${build.classes.dir}" />
+		</fx:jar>
+
+		<fx:signjar keyStore="${basedir}/keygen/applet-integracion-device.jks" destdir="dist" alias="applet-integracion-device" storePass="applet-integracion-device" keyPass="applet-integracion-device">
+			<fileset dir="dist" />
+			<fileset dir="libs" />
+		</fx:signjar>
+
+		<fx:deploy width="${applet.width}" height="${applet.height}" includeDT="true" outdir="${basedir}/${dist.dir}" embedJNLP="true" outfile="${application.title}">
+
+			<fx:application refId="idinmobiliaria" />
+
+			<fx:resources refid="appRes" />
+
+			<fx:info title="${application.title}" vendor="${application.vendor}" />
+
+			<!-- Request elevated permissions -->
+			<!--fx:permissions elevate="true" /-->
+		</fx:deploy>
+
+	</target>
+</project>
+

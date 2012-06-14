@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="inmobiliaria.entities.Inmueble" table="inmueble"><!--  discriminator-value="P"-->
+        <id name="idInmueble" column="idinmueble">
+                <generator class="increment"/>
+        </id>
+        
+        <!-- discriminator column="pe_discriminador" /-->
+        
+        <property name="calle" column="calle"/>
+        <property name="calleNro" column="calleNro"/>
+        <property name="callePiso" column="callePiso"/>
+        <property name="calleDpto" column="calleDpto"/>
+        <property name="provincia" column="provincia"/>
+        <property name="localidad" column="localidad"/>
+        <many-to-one name="persona" class="inmobiliaria.entities.Persona"
+                    column="idPersonaDueno" lazy="false" not-null="false" cascade="all" unique="true" />
+
+        <!-- subclass name="inmobiliaria.entities.Vendedor" discriminator-value="VE">
+                <property name="legajo" column="pe_ve_legajo"/>
+                <property name="fechaDeIngreso" column="pe_ve_fecha_ingreso"/>
+        </subclass-->
+
+        <!-- subclass name="inmobiliaria.entities.Cliente" discriminator-value="CL">
+                <property name="tipoDoc" column="tipoDni"/>
+                <property name="nroDoc" column="nroDni"/>
+        </subclass-->                
+
+    </class>
+</hibernate-mapping>

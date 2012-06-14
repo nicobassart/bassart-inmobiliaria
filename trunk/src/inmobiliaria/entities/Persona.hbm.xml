@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="inmobiliaria.entities.Persona" table="persona" discriminator-value="P">
+        <id name="idpersona" column="idpersona">
+			<generator class="increment"/>
+        </id>
+        
+        <discriminator column="pe_discriminador" />
+        
+        <property name="nombre" column="nombre"/>
+        <property name="apellido" column="apellido"/>
+        <property name="tipoDoc" column="tipoDoc"/>
+        <property name="nroDoc" column="nroDoc"/>
+        <property name="tel_fijo" column="tel_fijo"/>
+        <property name="tel_celular" column="tel_celular"/>
+        <property name="tel_opcional" column="tel_opcional"/>
+        <property name="email" column="email"/>
+
+        <!-- subclass name="inmobiliaria.entities.Vendedor" discriminator-value="VE">
+                <property name="legajo" column="pe_ve_legajo"/>
+                <property name="fechaDeIngreso" column="pe_ve_fecha_ingreso"/>
+        </subclass-->
+
+        <subclass name="inmobiliaria.entities.Cliente" discriminator-value="CL">
+        </subclass>                
+
+    </class>
+</hibernate-mapping>
