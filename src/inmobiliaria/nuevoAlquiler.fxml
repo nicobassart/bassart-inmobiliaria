@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.label.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="844.0" prefWidth="829.0" xmlns:fx="http://javafx.com/fxml" fx:controller="inmobiliaria.controller.NuevoAlquilerController">
+  <bottom>
+    <fx:include source="footer.fxml" />
+  </bottom>
+  <center>
+    <GridPane alignment="CENTER" blendMode="DARKEN" depthTest="ENABLE" hgap="8.0" prefHeight="550.0" prefWidth="700.0" style="-fx-padding: 50 15 15 15" vgap="8.0">
+      <children>
+        <Label text="%common.inquilino" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label text="%common.inmueble" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Label text="Fecha Inicio:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Label text="Fecha Fin:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <Label text="Importe deposito:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <Label text="Cobrar inquilino: $" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <Label text="Cobrar dueño: %" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+        <Label text="Servicios:" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+        <TextField fx:id="nombreInquilino" editable="false" prefColumnCount="20" promptText="Presione en buscar" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <TextField fx:id="calle" editable="false" prefColumnCount="20" promptText="Presione en buscar" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <TextField fx:id="fechaInicio" minHeight="26.0" prefColumnCount="10" prefHeight="40.0" promptText="01-01-2011" style="-fx-lines: 30;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <TextField fx:id="fechaFin" minHeight="26.0" prefColumnCount="10" promptText="29-01-2014" style="-fx-lines: 30;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <TextField fx:id="importeDeposito" minHeight="26.0" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <TextField fx:id="importeInquilino" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        <Button fx:id="Proyectar" defaultButton="true" minWidth="70.0" onAction="#proyectarInquilino" text="Proyectar" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+        <TextField fx:id="porcentajeDueno" minHeight="26.0" prefColumnCount="10" promptText="20 (porcentaje sobre la cuota)" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+        <TableView fx:id="1" maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="1" GridPane.columnSpan="9" GridPane.rowIndex="6">
+          <columns>
+            <TableColumn prefWidth="100.0" text="Mes/Año" />
+            <TableColumn prefWidth="100.0" text="Porcentaje" />
+            <TableColumn prefWidth="100.0" text="valor" />
+            <TableColumn prefWidth="100.0" text="Cuota Nro" />
+          </columns>
+        </TableView>
+        <CheckBox fx:id="abl" text="ABL" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+        <CheckBox fx:id="gas" text="Gas" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+        <CheckBox fx:id="cable" text="Cable" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+        <CheckBox fx:id="telefono" text="Telefono" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+        <CheckBox fx:id="internet" text="Internet" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+        <CheckBox fx:id="agua" text="Agua" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+        <Button fx:id="guardar" defaultButton="true" minWidth="70.0" onAction="#processGuardar" text="%common.guardar" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+        <Button id="buscar" fx:id="buscarInquilino" defaultButton="true" minWidth="70.0" onAction="#processBuscarPersona" text="%common.buscar" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+        <Button id="buscar" fx:id="buscarInmueble" defaultButton="true" minWidth="70.0" onAction="#processBuscarInmueble" text="%common.buscar" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      </children>
+      <BorderPane.margin>
+        <Insets top="40.0" />
+      </BorderPane.margin>
+    </GridPane>
+  </center>
+  <top>
+    <fx:include source="header.fxml">
+      <bottom>
+        <HBox>
+          <Label fx:id="error" textFill="RED" />
+        </HBox>
+      </bottom>
+    </fx:include>
+  </top>
+</BorderPane>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.label.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefWidth="566.0" xmlns:fx="http://javafx.com/fxml" fx:controller="inmobiliaria.controller.BuscarInmuebleController">
+  <bottom>
+    <fx:include source="footer.fxml" />
+  </bottom>
+  <center>
+    <GridPane alignment="TOP_CENTER" hgap="3.0" style="-fx-padding: 10 10 10 10">
+      <children>
+        <Label text="%common.buscar" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="nombre" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Button fx:id="buscar" defaultButton="true" onAction="#processBuscar" text="Buscar" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+        <Label fx:id="buttonStatusText" style="-fx-text-fill: #ff0000;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <TableView fx:id="1" prefWidth="352.0" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="3">
+          <columns>
+            <TableColumn text="Calle" />
+            <TableColumn text="Numero" />
+            <TableColumn text="Piso" />
+          </columns>
+        </TableView>
+      </children>
+    </GridPane>
+  </center>
+  <top>
+    <fx:include source="header.fxml" />
+  </top>
+</BorderPane>

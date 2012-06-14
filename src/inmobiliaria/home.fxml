@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefWidth="854.0" xmlns:fx="http://javafx.com/fxml" fx:controller="inmobiliaria.controller.HomeController">
+  <bottom>
+    <fx:include source="footer.fxml" />
+  </bottom>
+  <center>
+    <AnchorPane prefHeight="479.0" prefWidth="703.0" styleClass="roundedAnchorPane">
+      <children>
+        <TableView id="AlquileresView" fx:id="tableDataInquilino" layoutX="20.0" layoutY="28.0" prefHeight="400.0" prefWidth="820.0" styleClass="table-view">
+          <columns>
+            <TableColumn prefWidth="250.0" text="Nombre Inquilino" />
+            <TableColumn prefWidth="250.0" text="Dirección" />
+            <TableColumn prefWidth="100.0" text="Importe" />
+            <TableColumn prefWidth="100.0" text="Periodo" />
+            <TableColumn prefWidth="100.0" text="Cobrar"  />
+          </columns>
+        </TableView>
+      </children>
+    </AnchorPane>
+  </center>
+  <top>
+    <fx:include source="header.fxml" />
+  </top>
+</BorderPane>

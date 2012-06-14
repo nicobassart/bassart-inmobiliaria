@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="inmobiliaria.entities.Pagos" table="pagos" discriminator-value="P">
+        <id name="idpago" column="idpago">
+			<generator class="increment"/>
+        </id>
+        
+        <property name="fechaPago" column="fechaPago"/>
+        <property name="importe" column="importe"/>
+        <property name="nota" column="nota"/>
+        <property name="importeAbl" column="importeAbl"/>
+        <property name="importeGas" column="importeGas"/>
+        <property name="importeInternet" column="importeInternet"/>
+        <property name="importeTelefono" column="importeTelefono"/>
+        <property name="importeAgua" column="importeAgua"/>
+        <property name="importeCable" column="importeCable"/>        
+        <!--  many-to-one name="alquiler" class="inmobiliaria.entities.Alquileres"
+                    column="idalquiler" lazy="false" not-null="true" cascade="all" unique="true" /-->
+
+    </class>
+</hibernate-mapping>

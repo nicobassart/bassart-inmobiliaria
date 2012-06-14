@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane fx:controller="inmobiliaria.controller.PagarCuotaController"  xmlns:fx="http://javafx.com/fxml">
+	<top>
+	    <fx:include source="header.fxml">
+	      <bottom>
+	        <HBox>
+	          <Label fx:id="error" textFill="RED" />
+	        </HBox>
+	      </bottom>
+	    </fx:include>
+	</top>
+	<center>
+		<GridPane alignment="top_center" hgap="3" vgap="2" style="-fx-padding: 10 10 10 10" >
+            <children>
+            	<Label text="Nombre y Apellido inquilino:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+				<Label text="Mes / Año" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+				<Label text="Porcentaje:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+				<Label text="Importe:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <Label text="ABL:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <Label text="Gas:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                <Label text="Cable:" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+                <Label text="Telefono:" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+                <Label text="Internet:" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+                <Label text="Agua:" GridPane.columnIndex="0" GridPane.rowIndex="9"/>
+                <Label text="Nota:" GridPane.columnIndex="0" GridPane.rowIndex="10"/>
+                				
+                <TextField fx:id="nombreApellidoInquilino" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="0"  editable="false"/>
+                <TextField fx:id="mesanio" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="1"  editable="false"/>
+                <TextField fx:id="porcentaje" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="2"  editable="false"/>
+                <TextField fx:id="valor" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="3"  editable="false"/>
+                
+                <TextField fx:id="abl"  prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <TextField fx:id="gas"  prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                <TextField fx:id="cable"  prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                <TextField fx:id="telefono"  prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                <TextField fx:id="internet"  prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+                <TextField fx:id="agua"  prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+                <TextArea fx:id="nota"   GridPane.columnIndex="1" GridPane.rowIndex="10"/>
+                
+            	<Button fx:id="buscar" text="Cobrar / Imprmir" GridPane.columnIndex="1" GridPane.rowIndex="12" onAction="#imprimir" />
+            </children>
+            <children>
+            </children>
+        </GridPane>
+	</center>
+	<bottom>
+		<fx:include source="footer.fxml" />
+	</bottom>
+</BorderPane>

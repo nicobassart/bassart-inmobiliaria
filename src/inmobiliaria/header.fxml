@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="inmobiliaria.controller.HeaderController">
+  <center>
+    <ToolBar prefHeight="39.0" prefWidth="175.0">
+      <items>
+        <Label fx:id="titulo" style="-fx-text-fill: #FFFFFF;-fx-padding: 2;" />
+      </items>
+    </ToolBar>
+  </center>
+  <right>
+    <ToolBar prefHeight="39.0" prefWidth="44.0">
+      <items>
+        <Button onAction="#volver" style="-fx-text-fill: #000000;-fx-padding: 2;">
+          <graphic>
+            <ImageView>
+              <image>
+                <Image url="@home.png" preserveRatio="false" smooth="false" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+      </items>
+    </ToolBar>
+  </right>
+  <top>
+    <MenuBar>
+      <menus>
+        <Menu text="Alquileres">
+          <items>
+            <MenuItem onAction="#nuevoAlquiler" text="Nuevo alquiler" />
+            <MenuItem onAction="#consultarAlquileres" text="Consultar alquileres" />
+          </items>
+        </Menu>
+        <Menu text="Propiedades">
+          <items>
+            <MenuItem onAction="#altaPropiedad" text="Alta" />
+            <MenuItem onAction="#bajaPropiedad" text="Baja" />
+            <MenuItem onAction="#modificacionPropiedad" text="Modificacion" />
+          </items>
+        </Menu>
+        <Menu text="Personas">
+          <items>
+            <MenuItem onAction="#altaPersona" text="Alta" />
+            <MenuItem onAction="#bajaPersona" text="Baja" />
+            <MenuItem onAction="#modificacionPersona" text="Modificacion" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </top>
+</BorderPane>

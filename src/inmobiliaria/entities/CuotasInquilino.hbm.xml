@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="inmobiliaria.entities.CuotasInquilino" table="cuotasinquilino" >
+        <id name="id" column="idcuotasinquilino">
+			<generator class="increment"/>
+        </id>
+        
+        <property name="mesanio" column="mesanio"/>
+        <property name="porcetaje" column="porcetaje"/>
+        <property name="valor" column="valor"/>
+        <property name="fecha" column="fecha"/>
+        <!--property name="idalquiler" column="idalquiler"/-->
+        <many-to-one name="alquileres" class="inmobiliaria.entities.Alquileres"
+                    column="idalquiler" unique="false" />
+        <many-to-one name="pago" class="inmobiliaria.entities.Pagos"
+                    column="idpago" lazy="false" not-null="false" cascade="all" unique="true" />
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+
+<GridPane alignment="center" hgap="1" vgap="2" style="-fx-padding: 1 0 0 0">
+	<children>
+		<Label text="%comentarioInf" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-text-fill: #000000;-fx-font-size: 14" />
+		<Label text="%copyRight" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+	</children>
+</GridPane>

@@ -1,0 +1,48 @@
+.login {
+    -fx-background-color:linear-gradient(white,#DDDDDD);
+    -fx-font-size: 1.2em;
+}
+.profile {
+    -fx-background-color:linear-gradient(white,#DDDDDD);
+    -fx-font-size: 1.1em;
+}
+.profile #subscribed {
+    -fx-font-size: 0.8em;
+}
+.profile #message {
+    -fx-font-size: 1.2em;
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-text-fill: #e4f3fc;
+    -fx-font: 14pt "Tahoma Bold";
+    -fx-padding: 4;
+    -fx-base: #2d4b8e
+}
+
+.text-input {
+    -fx-text-fill: #000000;
+    -fx-font: 16pt "Tahoma Bold";
+    -fx-padding: 4;
+    -fx-base: #2d4b8e;
+    -fx-font-size: 1.2em;
+    -fx-font-weight: bold;
+}
+
+.roundedAnchorPane {
+    -fx-border-radius:10 10 10 10;
+    -fx-border-color: #d6d6d6;
+    -fx-border-width: 0.083333em;
+    -fx-padding: 4;
+}
+.columnaCobrar {
+	-fx-center;
+
+}
+	
+.table-view {
+	-fx-table-cell-border-color:#d6d6d9;
+	-fx-table-header-border-color:#d6d6d6;
+}
+	
