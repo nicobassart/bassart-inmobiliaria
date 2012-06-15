@@ -90,8 +90,11 @@ public class AltaPersonaController implements Initializable {
 		
 		if(!UtilValidarCampos.isNumeric(nroDoc2.getText())) errorAcum+= ("El número de documento debe ser númerico.");
 		
-		if(!errorAcum.isEmpty()) error.setText(errorAcum);
-		
-		return false;
+		if(!errorAcum.isEmpty()){ 
+			error.setText(errorAcum); 
+			return false;
+		}
+	
+		return true;
 	}
 }
