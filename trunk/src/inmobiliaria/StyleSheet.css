@@ -2,6 +2,9 @@
     -fx-background-color:linear-gradient(white,#DDDDDD);
     -fx-font-size: 1.2em;
 }
+.label {
+	-fx-font-size: 1.1em;
+}
 .profile {
     -fx-background-color:linear-gradient(white,#DDDDDD);
     -fx-font-size: 1.1em;
@@ -18,7 +21,7 @@
     -fx-text-fill: #e4f3fc;
     -fx-font: 14pt "Tahoma Bold";
     -fx-padding: 4;
-    -fx-base: #2d4b8e
+    -fx-base: #2d4b8e;
 }
 
 .text-input {
@@ -37,12 +40,34 @@
     -fx-padding: 4;
 }
 .columnaCobrar {
-	-fx-center;
+	-fx-alignment: center ;
 
 }
-	
 .table-view {
-	-fx-table-cell-border-color:#d6d6d9;
+	-fx-border-color: #d6d6d6;
+	-fx-background-color: #d6d6d6;
+	-fx-table-cell-border-color:#d6d6d6;
 	-fx-table-header-border-color:#d6d6d6;
 }
-	
+.table-view-1 {
+	-fx-border-color: #d6d6d6;
+	-fx-background-color: #d6d6d6;
+	-fx-table-cell-border-color:#d6d6d6;
+	-fx-table-header-border-color:#DDDDDD;
+}
+
+.menu{
+	-fx-font: 14pt "Tahoma Bold";
+}
+.menu_item{
+	-fx-font: 14pt "Tahoma Bold";
+}
+.gradient{
+    -fx-background-color:linear-gradient(white,#DDDDDD);
+}
+.footer	{
+    -fx-background-color:linear-gradient(#DDDDDD,#000000);
+    -fx-font-size: 1.5em;
+    -fx-font-size: 1.5em;
+    -fx-font-color: white;
+}

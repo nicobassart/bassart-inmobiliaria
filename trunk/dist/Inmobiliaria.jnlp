@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Inmobiliaria.jnlp">
+  <information>
+    <title>Inmobiliaria</title>
+    <vendor>Pedro Nicolás Bassart</vendor>
+    <description>Sample JavaFX 2.0 application.</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <jfx:javafx-runtime version="2.1+" href="http://javadl.sun.com/webapps/download/GetFile/javafx-latest/windows-i586/javafx2.jnlp"/>
+  </resources>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Inmobiliaria.jar" size="123899" download="eager" />
+    <jar href="antlr-2.7.6.jar" size="443432" download="eager" />
+    <jar href="cglib-nodep-2.1_3.jar" size="324238" download="eager" />
+    <jar href="commons-beanutils-1.8.3.jar" size="232019" download="eager" />
+    <jar href="commons-beanutils-bean-collections-1.8.3.jar" size="26574" download="eager" />
+    <jar href="commons-beanutils-core-1.8.3.jar" size="206711" download="eager" />
+    <jar href="commons-collections-3.2.1.jar" size="575389" download="eager" />
+    <jar href="commons-digester-1.8.jar" size="143602" download="eager" />
+    <jar href="commons-digester.jar" size="93881" download="eager" />
+    <jar href="commons-lang-2.5.jar" size="278703" download="eager" />
+    <jar href="commons-logging-1.1.1.jar" size="60686" download="eager" />
+    <jar href="commons-pool-1.5.5.jar" size="100193" download="eager" />
+    <jar href="dom4j.jar" size="416463" download="eager" />
+    <jar href="ehcache-1.2.3.jar" size="204667" download="eager" />
+    <jar href="hibernate-all.jar" size="2571205" download="eager" />
+    <jar href="hibernate3.jar" size="2217537" download="eager" />
+    <jar href="itext-2.1.7.jar" size="1130070" download="eager" />
+    <jar href="jasperreports-4.5.0.jar" size="3387967" download="eager" />
+    <jar href="jta.jar" size="8120" download="eager" />
+    <jar href="lucene-core-3.2.0.jar" size="1246325" download="eager" />
+    <jar href="lucene-grouping-3.2.0.jar" size="22060" download="eager" />
+    <jar href="mysql-connector-java-3.1.12-bin.jar" size="446464" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Inmobiliaria" >
+    <param name="requiredFXVersion" value="2.1+"/>
+  </applet>
+  <jfx:javafx-desc  width="800" height="600" main-class="inmobiliaria.App"  name="Inmobiliaria" />
+  <update check="background"/>
+</jnlp>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.label.*?>
@@ -8,14 +9,18 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="844.0" prefWidth="829.0" xmlns:fx="http://javafx.com/fxml" fx:controller="inmobiliaria.controller.NuevoAlquilerController">
+<BorderPane prefHeight="844.0" prefWidth="829.0" snapToPixel="true" xmlns:fx="http://javafx.com/fxml" fx:controller="inmobiliaria.controller.NuevoAlquilerController">
   <bottom>
     <fx:include source="footer.fxml" />
   </bottom>
   <center>
-    <GridPane alignment="CENTER" blendMode="DARKEN" depthTest="ENABLE" hgap="8.0" prefHeight="550.0" prefWidth="700.0" style="-fx-padding: 50 15 15 15" vgap="8.0">
+    <GridPane alignment="TOP_CENTER" blendMode="DARKEN" depthTest="ENABLE" gridLinesVisible="false" hgap="8.0" prefHeight="550.0" prefWidth="700.0" snapToPixel="false" style="-fx-padding: 5 2 0 5;" styleClass="gradient" vgap="8.0">
       <children>
-        <Label text="%common.inquilino" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label text="%common.inquilino" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <stylesheets>
+            <URL value="@StyleSheet.css" />
+          </stylesheets>
+        </Label>
         <Label text="%common.inmueble" GridPane.columnIndex="0" GridPane.rowIndex="1" />
         <Label text="Fecha Inicio:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
         <Label text="Fecha Fin:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
@@ -54,6 +59,9 @@
       </BorderPane.margin>
     </GridPane>
   </center>
+  <stylesheets>
+    <URL value="@StyleSheet.css" />
+  </stylesheets>
   <top>
     <fx:include source="header.fxml">
       <bottom>

@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefWidth="854.0" xmlns:fx="http://javafx.com/fxml" fx:controller="inmobiliaria.controller.HomeController">
+<BorderPane prefWidth="854.0" styleClass="table-view" xmlns:fx="http://javafx.com/fxml" fx:controller="inmobiliaria.controller.HomeController">
   <bottom>
     <fx:include source="footer.fxml" />
   </bottom>
   <center>
-    <AnchorPane prefHeight="479.0" prefWidth="703.0" styleClass="roundedAnchorPane">
+    <AnchorPane prefHeight="479.0" prefWidth="703.0" styleClass="gradient" BorderPane.alignment="CENTER">
       <children>
-        <TableView id="AlquileresView" fx:id="tableDataInquilino" layoutX="20.0" layoutY="28.0" prefHeight="400.0" prefWidth="820.0" styleClass="table-view">
+        <TableView id="AlquileresView" fx:id="tableDataInquilino" maxHeight="600.0" minHeight="200.0" minWidth="200.0" prefHeight="-1.0" prefWidth="-1.0" styleClass="table-view-1" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0">
           <columns>
-            <TableColumn prefWidth="250.0" text="Nombre Inquilino" />
-            <TableColumn prefWidth="250.0" text="Dirección" />
-            <TableColumn prefWidth="100.0" text="Importe" />
-            <TableColumn prefWidth="100.0" text="Periodo" />
-            <TableColumn prefWidth="100.0" text="Cobrar"  />
+            <TableColumn maxWidth="700.0" minWidth="100.0" prefWidth="300.0" text="Nombre Inquilino" />
+            <TableColumn maxWidth="700.0" minWidth="100.0" prefWidth="300.0" text="Dirección" />
+            <TableColumn maxWidth="100.0" minWidth="80.0" prefWidth="90.0" text="Importe" />
+            <TableColumn maxWidth="100.0" minWidth="80.0" prefWidth="90.0" text="Periodo" />
+            <TableColumn maxWidth="65.0" minWidth="60.0" prefWidth="60.0" text="Cobrar" />
           </columns>
         </TableView>
       </children>
     </AnchorPane>
   </center>
+  <stylesheets>
+    <URL value="@StyleSheet.css" />
+  </stylesheets>
   <top>
     <fx:include source="header.fxml" />
   </top>

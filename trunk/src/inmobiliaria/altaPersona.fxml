@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.label.*?>
@@ -8,12 +9,12 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="501.0" prefWidth="591.0" xmlns:fx="http://javafx.com/fxml" fx:controller="inmobiliaria.controller.AltaPersonaController">
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="inmobiliaria.controller.AltaPersonaController">
   <bottom>
-    <fx:include source="footer.fxml"/>
+    <fx:include source="footer.fxml" />
   </bottom>
   <center>
-    <GridPane alignment="TOP_CENTER" hgap="8.0" style="-fx-padding: 40 0 0 0" vgap="8.0">
+    <GridPane alignment="TOP_CENTER" hgap="8.0" style="-fx-padding: 40 0 0 0;&#10;" styleClass="gradient" vgap="8.0">
       <children>
         <Label text="%common.nombre" GridPane.columnIndex="0" GridPane.rowIndex="0" />
         <Label text="%common.apellido" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -43,6 +44,9 @@
         <Button fx:id="guardar" defaultButton="true" onAction="#guardar" text="%common.guardar" GridPane.columnIndex="1" GridPane.rowIndex="9" />
         <Label fx:id="buttonStatusText" style="-fx-text-fill: #ff0000;" GridPane.columnIndex="1" GridPane.rowIndex="10" />
       </children>
+      <stylesheets>
+        <URL value="@demo.css" />
+      </stylesheets>
     </GridPane>
   </center>
   <top>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.label.*?>
 <?import javafx.scene.layout.*?>
@@ -13,7 +14,7 @@
     <fx:include source="footer.fxml" />
   </bottom>
   <center>
-    <AnchorPane prefHeight="523.0" prefWidth="874.0">
+    <AnchorPane prefHeight="-1.0" prefWidth="-1.0" styleClass="gradient" BorderPane.alignment="TOP_CENTER">
       <children>
         <Label id="label1" layoutX="210.0" layoutY="443.0" text="Usted está seguro que desea borrar el siguiente registro ?" />
         <Button id="buscar" fx:id="borrar" defaultButton="true" layoutX="403.0" layoutY="468.0" onAction="#processEliminar" prefHeight="21.0" prefWidth="61.0" text="Borrar" />
@@ -47,6 +48,9 @@
           </columns>
         </TableView>
       </children>
+      <stylesheets>
+        <URL value="@StyleSheet.css" />
+      </stylesheets>
     </AnchorPane>
   </center>
   <top>
