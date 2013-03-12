@@ -1,13 +1,15 @@
 package inmobiliaria.controller;
 
+import inmobiliaria.App;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import inmobiliaria.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 
 public class HeaderController implements Initializable  {
 	@FXML private Label titulo;
@@ -60,7 +62,7 @@ public class HeaderController implements Initializable  {
 	}
 
 	@FXML
-	protected void volver(ActionEvent event) throws Exception {
+	protected void volver(MouseEvent event) throws Exception {
 		App.getInstance().replaceSceneContent("home.fxml");
 	}
 	@Override

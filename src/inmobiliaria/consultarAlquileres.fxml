@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.label.*?>
 <?import javafx.scene.layout.*?>
@@ -8,30 +9,28 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="500.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml" fx:controller="inmobiliaria.controller.ConsultarAlquileresController">
+<BorderPane styleClass="gradient" xmlns:fx="http://javafx.com/fxml" fx:controller="inmobiliaria.controller.ConsultarAlquileresController">
   <bottom>
     <fx:include source="footer.fxml" />
   </bottom>
   <center>
-    <AnchorPane prefHeight="500.0" prefWidth="700.0">
+    <AnchorPane prefHeight="500.0" prefWidth="700.0" BorderPane.alignment="TOP_CENTER">
       <children>
-        <HBox id="hBox2" layoutX="14.0" layoutY="14.0" prefHeight="22.0" prefWidth="64.0" />
-        <HBox id="hBox1" layoutX="10.0" layoutY="60.0" prefHeight="350.0" prefWidth="680.0">
-          <children>
-            <TableView fx:id="tableDataAlquileres" HBox.hgrow="ALWAYS">
-              <columns>
-                <TableColumn prefWidth="200.0" text="Nombre Apellido" />
-                <TableColumn prefWidth="140.0" text="Dirección" />
-                <TableColumn prefWidth="85.0" text="Estado" />
-                <TableColumn prefWidth="70.0" text="Eliminar" />
-              </columns>
-            </TableView>
-          </children>
-        </HBox>
-        <Button fx:id="buscar" defaultButton="true" layoutX="10.0" layoutY="25.0" onAction="#processBuscar" prefHeight="21.0" prefWidth="61.0" text="Buscar" />
+        <TableView fx:id="tableDataAlquileres" layoutY="50.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+          <columns>
+            <TableColumn prefWidth="200.0" text="Nombre Apellido" />
+            <TableColumn prefWidth="140.0" text="Dirección" />
+            <TableColumn prefWidth="85.0" text="Estado" />
+            <TableColumn prefWidth="70.0" text="Eliminar" />
+          </columns>
+        </TableView>
+        <!-- Button fx:id="buscar" defaultButton="true" layoutX="10.0" layoutY="25.0" onAction="#processBuscar" prefHeight="21.0" prefWidth="61.0" text="Buscar" /-->
       </children>
     </AnchorPane>
   </center>
+  <stylesheets>
+    <URL value="@StyleSheet.css" />
+  </stylesheets>
   <top>
     <fx:include source="header.fxml" />
   </top>

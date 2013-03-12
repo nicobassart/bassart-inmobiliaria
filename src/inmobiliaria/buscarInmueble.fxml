@@ -23,7 +23,7 @@
           <columns>
             <TableColumn text="Calle" />
             <TableColumn text="Numero" />
-            <TableColumn text="Piso" />
+            <TableColumn editable="false" text="Piso" />
           </columns>
         </TableView>
       </children>

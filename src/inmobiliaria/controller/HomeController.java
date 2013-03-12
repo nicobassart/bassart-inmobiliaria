@@ -82,7 +82,7 @@ public class HomeController implements Initializable {
 		}
 		tableDataInquilino.setItems( FXCollections.observableArrayList(listaAlquileres));
 		TablasUtils.armarColumnasHome(tableDataInquilino);
-
+		tableDataInquilino.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 		//TableColumn<String, String> actionCol = new TableColumn<String, String>("Cobrar");
 		TableColumn<AlquileresView, String> actionCol =  (TableColumn <AlquileresView, String>) tableDataInquilino.getColumns().get(4);
 		actionCol.setCellFactory(new Callback<TableColumn<AlquileresView, String>, TableCell<AlquileresView, String>>() {

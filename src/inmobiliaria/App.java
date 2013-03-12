@@ -5,6 +5,7 @@ import inmobiliaria.model.AlquileresView;
 import inmobiliaria.model.Inmueble;
 import inmobiliaria.model.Persona;
 
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -75,8 +76,8 @@ public class App extends Application {
         Parent page = (Parent) FXMLLoader.load(App.class.getResource(fxml), ResourceBundle.getBundle("inmobiliaria.boundle"), new JavaFXBuilderFactory());
         Scene scene = stage.getScene();
         if (scene == null) {
-            scene = new Scene(page, 900, 700);
-            scene.getStylesheets().add(App.class.getResource("demo.css").toExternalForm());
+            scene = new Scene(page, Toolkit.getDefaultToolkit().getScreenSize().getWidth(), Toolkit.getDefaultToolkit().getScreenSize().getHeight() - 70);
+            scene.getStylesheets().add(App.class.getResource("StyleSheet.css").toExternalForm());
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);

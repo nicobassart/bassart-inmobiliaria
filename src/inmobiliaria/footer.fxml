@@ -1,12 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
 
-<GridPane alignment="center" hgap="1" vgap="2" style="-fx-padding: 1 0 0 0">
-	<children>
-		<Label text="%comentarioInf" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-text-fill: #000000;-fx-font-size: 14" />
-		<Label text="%copyRight" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-	</children>
+<GridPane alignment="CENTER" hgap="1.0" prefHeight="25.0" style="-fx-padding: 1 0 0 0" styleClass="gradient, footer" vgap="2.0" xmlns:fx="http://javafx.com/fxml">
+  <children>
+    <Label style="-fx-text-fill: white;-fx-font-size: 14;-fx-font-color: #999999;&#10;" text="%comentarioInf" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <Label style="-fx-text-fill: white;-fx-font-size: 14" text="%copyRight" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+  </children>
+  <stylesheets>
+    <URL value="@demo.css" />
+  </stylesheets>
 </GridPane>
