@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="inmobiliaria.controller.HeaderController">
+  <center>
+    <ToolBar prefHeight="40.0" prefWidth="175.0" BorderPane.alignment="TOP_LEFT">
+      <items>
+        <Label fx:id="titulo" style="-fx-text-fill: #FFFFFF;-fx-padding: 2;" />
+      </items>
+    </ToolBar>
+  </center>
+  <right>
+    <ToolBar prefHeight="40.0" prefWidth="58.0">
+      <items>
+        <ImageView onMouseClicked="#volver" preserveRatio="true" smooth="true">
+          <image>
+            <Image url="@home.png" preserveRatio="false" smooth="false" />
+          </image>
+        </ImageView>
+      </items>
+    </ToolBar>
+  </right>
+  <stylesheets>
+    <URL value="@StyleSheet.css" />
+  </stylesheets>
+  <top>
+    <MenuBar>
+      <menus>
+        <Menu styleClass="menu" text="Alquileres">
+          <items>
+            <MenuItem onAction="#nuevoAlquiler" styleClass="menu_item" text="Nuevo alquiler" />
+            <MenuItem onAction="#consultarAlquileres" styleClass="menu_item" text="Consultar alquileres" />
+          </items>
+        </Menu>
+        <Menu  text="Propiedades">
+          <items>
+            <MenuItem onAction="#altaPropiedad" styleClass="menu_item" text="Alta" />
+            <MenuItem onAction="#bajaPropiedad" styleClass="menu_item" text="Baja" />
+            <MenuItem onAction="#modificacionPropiedad" styleClass="menu_item" text="Modificacion" />
+          </items>
+        </Menu>
+        <Menu text="Personas">
+          <items>
+            <MenuItem onAction="#altaPersona" styleClass="menu_item" text="Alta" />
+            <MenuItem onAction="#bajaPersona" styleClass="menu_item" text="Baja" />
+            <MenuItem onAction="#modificacionPersona" styleClass="menu_item" text="Modificacion" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </top>
+</BorderPane>

@@ -8,8 +8,8 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefWidth="854.0" styleClass="table-view" xmlns:fx="http://javafx.com/fxml" fx:controller="inmobiliaria.controller.HomeController">
-  <bottom>
+<BorderPane prefWidth="854.0" styleClass="border-home" xmlns:fx="http://javafx.com/fxml" fx:controller="inmobiliaria.controller.HomeController">
+  <bottom >
     <fx:include source="footer.fxml" />
   </bottom>
   <center>
