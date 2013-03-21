@@ -2,58 +2,109 @@
 
 <?import java.lang.*?>
 <?import java.net.*?>
-<?import javafx.scene.*?>
+<?import java.util.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="inmobiliaria.controller.HeaderController">
   <center>
-    <ToolBar prefHeight="40.0" prefWidth="175.0" BorderPane.alignment="TOP_LEFT">
-      <items>
-        <Label fx:id="titulo" style="-fx-text-fill: #FFFFFF;-fx-padding: 2;" />
-      </items>
-    </ToolBar>
-  </center>
-  <right>
-    <ToolBar prefHeight="40.0" prefWidth="58.0">
-      <items>
-        <ImageView onMouseClicked="#volver" preserveRatio="true" smooth="true">
-          <image>
-            <Image url="@home.png" preserveRatio="false" smooth="false" />
-          </image>
-        </ImageView>
-      </items>
-    </ToolBar>
-  </right>
+    <TabPane blendMode="SRC_OVER" depthTest="DISABLE" focusTraversable="true" maxWidth="-Infinity" pickOnBounds="false" prefHeight="117.0" rotateGraphic="false" side="TOP" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="67.0" visible="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <tabs>
+        <Tab text="">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="750" prefHeight="55.0" prefWidth="Infinity">
+              <children>
+                <ToolBar layoutX="0.0" layoutY="0.0" prefHeight="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" >
+                  <items>
+                    <Button mnemonicParsing="false" onAction="#nuevoAlquiler" text="Nuevo alquiler" />
+                    <Button mnemonicParsing="false" onAction="#consultarAlquileres" text="Consultar alquileres" />
+                  </items>
+                </ToolBar>
+              </children>
+            </AnchorPane>
+          </content>
+          <graphic>
+            <ImageView fitHeight="57.150001525878906" fitWidth="58.118645079781245" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="file:/C:/Users/Nico/Desktop/CompartidoVM/Aplicacion%20Inmobiliarias/inicio/mano1.png" />
+              </image>
+            </ImageView>
+          </graphic>
+          <tooltip>
+            <Tooltip text="Alquileres" />
+          </tooltip>
+        </Tab>
+        <Tab text="">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="750" prefHeight="55.0" prefWidth="Infinity">
+              <children>
+                <ToolBar layoutX="0.0" layoutY="0.0" prefHeight="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" >
+                  <items>
+                    <Button mnemonicParsing="false" onAction="#altaPersona"  text="Nueva" />
+                    <Button mnemonicParsing="false" onAction="#bajaPersona" text="Eliminar" />
+                    <Button mnemonicParsing="false" onAction="#modificacionPersona" text="Modificar" />
+                  </items>
+                </ToolBar>
+              </children>
+            </AnchorPane>
+          </content>
+          <graphic>
+            <ImageView fitHeight="0.0" fitWidth="0.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="file:/C:/Users/Nico/Desktop/CompartidoVM/Aplicacion%20Inmobiliarias/inicio/persona2.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Tab>
+        <Tab text="">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="750" prefHeight="55.0" prefWidth="Infinity">
+              <children>
+                <ToolBar layoutX="0.0" layoutY="0.0" prefHeight="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" >
+                  <items>
+                    <Button mnemonicParsing="false" text="Vencimientos" />
+                  </items>
+                </ToolBar>
+              </children>
+            </AnchorPane>
+          </content>
+          <graphic>
+            <ImageView fitHeight="0.0" fitWidth="0.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="file:/C:/Users/Nico/Desktop/CompartidoVM/Aplicacion%20Inmobiliarias/inicio/venciminetos4.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Tab>
+        <Tab text="">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="750" prefHeight="55.0" prefWidth="Infinity">
+              <children>
+                <ToolBar layoutX="0.0" layoutY="0.0" prefHeight="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" >
+                  <items>
+                    <Button mnemonicParsing="false" onAction="#altaPropiedad" text="Nueva" />
+                    <Button mnemonicParsing="false" onAction="#bajaPropiedad" text="Eliminar" />
+                    <Button mnemonicParsing="false" onAction="#modificacionPropiedad" text="Modificacion" />
+                  </items>
+                </ToolBar>
+              </children>
+            </AnchorPane>
+          </content>
+          <graphic>
+            <ImageView fitHeight="0.0" fitWidth="0.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="file:/C:/Users/Nico/Desktop/CompartidoVM/Aplicacion%20Inmobiliarias/inicio/propiedades4.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Tab>
+      </tabs>
+    </TabPane>
+      </center>
+      <bottom><Label fx:id="titulo" style="-fx-text-fill: #111111;-fx-padding: 2;" alignment="TOP_RIGHT" /></bottom>
   <stylesheets>
     <URL value="@StyleSheet.css" />
   </stylesheets>
-  <top>
-    <MenuBar>
-      <menus>
-        <Menu styleClass="menu" text="Alquileres">
-          <items>
-            <MenuItem onAction="#nuevoAlquiler" styleClass="menu_item" text="Nuevo alquiler" />
-            <MenuItem onAction="#consultarAlquileres" styleClass="menu_item" text="Consultar alquileres" />
-          </items>
-        </Menu>
-        <Menu  text="Propiedades">
-          <items>
-            <MenuItem onAction="#altaPropiedad" styleClass="menu_item" text="Alta" />
-            <MenuItem onAction="#bajaPropiedad" styleClass="menu_item" text="Baja" />
-            <MenuItem onAction="#modificacionPropiedad" styleClass="menu_item" text="Modificacion" />
-          </items>
-        </Menu>
-        <Menu text="Personas">
-          <items>
-            <MenuItem onAction="#altaPersona" styleClass="menu_item" text="Alta" />
-            <MenuItem onAction="#bajaPersona" styleClass="menu_item" text="Baja" />
-            <MenuItem onAction="#modificacionPersona" styleClass="menu_item" text="Modificacion" />
-          </items>
-        </Menu>
-      </menus>
-    </MenuBar>
-  </top>
 </BorderPane>

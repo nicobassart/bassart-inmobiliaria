@@ -18,14 +18,17 @@
 }
 
 .button {
-    -fx-text-fill: #e4f3fc;
-    -fx-font: 14pt "Tahoma Bold";
+    -fx-text-fill: #fdfeff;
+    -fx-font: 14pt "arial,sans-serif";
     -fx-padding: 4;
-    -fx-base: #2d4b8e;
+    -fx-base: #1625e8;
+    -fx-border-width: .01em;
+    -fx-border-color: #c6c6c6;
+    -fx-border-radius:.1 .1 0.1 0.1;
 }
 
 .text-input {
-    -fx-text-fill: #000000;
+    -fx-text-fill: #fdfeff;
     -fx-font: 16pt "Tahoma Bold";
     -fx-padding: 4;
     -fx-base: #2d4b8e;
@@ -42,6 +45,9 @@
 .columnaCobrar {
 	-fx-alignment: center ;
 
+}
+.border-home{
+	
 }
 .table-view {
 	-fx-border-color: #d6d6d6;
@@ -70,4 +76,26 @@
     -fx-font-size: 1.5em;
     -fx-font-size: 1.5em;
     -fx-font-color: white;
+}
+
+.tool-bar {
+	-fx-padding: 0;
+    -fx-font-size: 12pt;
+  	-fx-background-color:linear-gradient(#f1f1f1,#f1f1f1);
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-effect: dropshadow(two-pass-box,black,5,.2,0,0);
+}
+
+.tab:selected {
+	-fx-effect: dropshadow(two-pass-box,black,5,.2,0,0);
+    -fx-background-color:linear-gradient(#fdfeff,#f1f1f1);
+    -fx-background-insets: 0, 4 4 0 1;
+}
+.tab-pane{
+
+	-fx-background-color: #2d2d2d;
+}
+
+.tab{
+	-fx-effect: dropshadow(two-pass-box,black,5,.2,0,0);
 }
