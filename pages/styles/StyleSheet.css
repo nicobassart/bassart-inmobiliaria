@@ -21,15 +21,15 @@
     -fx-text-fill: #fdfeff;
     -fx-font: 14pt "arial,sans-serif";
     -fx-padding: 4;
-    -fx-base: #1625e8;
+    -fx-base: #4a8cf6;
     -fx-border-width: .01em;
     -fx-border-color: #c6c6c6;
     -fx-border-radius:.1 .1 0.1 0.1;
 }
 
 .text-input {
-    -fx-text-fill: #fdfeff;
-    -fx-font: 16pt "Tahoma Bold";
+    -fx-text-fill: #2d2d2d;
+    -fx-font: 16pt "arial,sans-serif";
     -fx-padding: 4;
     -fx-base: #2d4b8e;
     -fx-font-size: 1.2em;
@@ -72,10 +72,9 @@
     -fx-background-color:linear-gradient(white,#DDDDDD);
 }
 .footer	{
-    -fx-background-color:linear-gradient(#DDDDDD,#000000);
-    -fx-font-size: 1.5em;
-    -fx-font-size: 1.5em;
-    -fx-font-color: white;
+    -fx-background-color: #2d2d2d;
+    -fx-font-size: 1em;
+    -fx-font-color: #b4b4b4;
 }
 
 .tool-bar {
@@ -92,10 +91,12 @@
     -fx-background-insets: 0, 4 4 0 1;
 }
 .tab-pane{
-
 	-fx-background-color: #2d2d2d;
 }
 
 .tab{
 	-fx-effect: dropshadow(two-pass-box,black,5,.2,0,0);
+}
+.center{
+	    -fx-background-color:linear-gradient(white,#DDDDDD);
 }

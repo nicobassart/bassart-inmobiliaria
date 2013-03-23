@@ -9,14 +9,17 @@
 <?import javafx.scene.paint.*?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="inmobiliaria.controller.HeaderController">
+  <bottom>
+    <Label fx:id="titulo" alignment="TOP_RIGHT" style="-fx-text-fill: #111111;-fx-padding: 2;" />
+  </bottom>
   <center>
-    <TabPane blendMode="SRC_OVER" depthTest="DISABLE" focusTraversable="true" maxWidth="-Infinity" pickOnBounds="false" prefHeight="117.0" rotateGraphic="false" side="TOP" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="67.0" visible="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <TabPane fx:id="tabPane" blendMode="SRC_OVER" depthTest="DISABLE" focusTraversable="true" maxWidth="-Infinity" pickOnBounds="false" prefHeight="117.0" rotateGraphic="false" side="TOP" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="67.0" visible="true" onContextMenuRequested="#contextMenu">
       <tabs>
         <Tab text="">
           <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="750" prefHeight="55.0" prefWidth="Infinity">
+            <AnchorPane id="Content" minHeight="0.0" minWidth="750.0" prefHeight="55.0" prefWidth="+Infinity">
               <children>
-                <ToolBar layoutX="0.0" layoutY="0.0" prefHeight="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" >
+                <ToolBar layoutY="0.0" prefHeight="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                   <items>
                     <Button mnemonicParsing="false" onAction="#nuevoAlquiler" text="Nuevo alquiler" />
                     <Button mnemonicParsing="false" onAction="#consultarAlquileres" text="Consultar alquileres" />
@@ -38,11 +41,11 @@
         </Tab>
         <Tab text="">
           <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="750" prefHeight="55.0" prefWidth="Infinity">
+            <AnchorPane id="Content" minHeight="0.0" minWidth="750.0" prefHeight="55.0" prefWidth="+Infinity">
               <children>
-                <ToolBar layoutX="0.0" layoutY="0.0" prefHeight="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" >
+                <ToolBar layoutY="0.0" prefHeight="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                   <items>
-                    <Button mnemonicParsing="false" onAction="#altaPersona"  text="Nueva" />
+                    <Button mnemonicParsing="false" onAction="#altaPersona" text="Nueva" />
                     <Button mnemonicParsing="false" onAction="#bajaPersona" text="Eliminar" />
                     <Button mnemonicParsing="false" onAction="#modificacionPersona" text="Modificar" />
                   </items>
@@ -60,9 +63,9 @@
         </Tab>
         <Tab text="">
           <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="750" prefHeight="55.0" prefWidth="Infinity">
+            <AnchorPane id="Content" minHeight="0.0" minWidth="750.0" prefHeight="55.0" prefWidth="+Infinity">
               <children>
-                <ToolBar layoutX="0.0" layoutY="0.0" prefHeight="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" >
+                <ToolBar layoutY="0.0" prefHeight="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                   <items>
                     <Button mnemonicParsing="false" text="Vencimientos" />
                   </items>
@@ -80,9 +83,9 @@
         </Tab>
         <Tab text="">
           <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="750" prefHeight="55.0" prefWidth="Infinity">
+            <AnchorPane id="Content" minHeight="0.0" minWidth="750.0" prefHeight="55.0" prefWidth="+Infinity">
               <children>
-                <ToolBar layoutX="0.0" layoutY="0.0" prefHeight="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" >
+                <ToolBar layoutY="0.0" prefHeight="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                   <items>
                     <Button mnemonicParsing="false" onAction="#altaPropiedad" text="Nueva" />
                     <Button mnemonicParsing="false" onAction="#bajaPropiedad" text="Eliminar" />
@@ -102,9 +105,8 @@
         </Tab>
       </tabs>
     </TabPane>
-      </center>
-      <bottom><Label fx:id="titulo" style="-fx-text-fill: #111111;-fx-padding: 2;" alignment="TOP_RIGHT" /></bottom>
+  </center>
   <stylesheets>
-    <URL value="@StyleSheet.css" />
+    <URL value="@styles/StyleSheet.css" />
   </stylesheets>
 </BorderPane>

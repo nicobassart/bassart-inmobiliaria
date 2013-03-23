@@ -45,7 +45,7 @@
         <Label fx:id="buttonStatusText" style="-fx-text-fill: #ff0000;" GridPane.columnIndex="1" GridPane.rowIndex="10" />
       </children>
       <stylesheets>
-        <URL value="@demo.css" />
+        <URL value="@styles/StyleSheet.css" />
       </stylesheets>
     </GridPane>
   </center>

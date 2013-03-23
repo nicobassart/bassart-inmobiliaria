@@ -3,7 +3,6 @@ package inmobiliaria.controller;
 import inmobiliaria.App;
 import inmobiliaria.entities.Alquileres;
 import inmobiliaria.entities.CuotasInquilino;
-import inmobiliaria.entities.CuotasInquilinosPersonaInmuebleDueno;
 import inmobiliaria.entities.Inmueble;
 import inmobiliaria.entities.Persona;
 import inmobiliaria.manager.SessionManager;
@@ -13,13 +12,9 @@ import inmobiliaria.utils.TablasUtils;
 import inmobiliaria.utils.Utils;
 
 import java.net.URL;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.ResourceBundle;
 
 import javafx.collections.ObservableList;
