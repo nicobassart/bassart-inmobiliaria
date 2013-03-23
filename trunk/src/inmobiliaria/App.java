@@ -17,6 +17,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TabPane;
 import javafx.stage.Stage;
 
 public class App extends Application {
@@ -29,6 +30,7 @@ public class App extends Application {
 	//Son los titulos que aparece en la parte superior
 	private String titulo;
 	private Stage stage;
+	private TabPane tabPane;
     private Persona persona;
     private Inmueble inmueble;
     private AlquileresView alquilerViewHome;
@@ -45,7 +47,6 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-    	
         launch(args);
     }
 
@@ -73,11 +74,11 @@ public class App extends Application {
     	pageAnterior.add(fxml);
     	
     	titulo =  (fxml.split(".fxml")[0]).toUpperCase();
-        Parent page = (Parent) FXMLLoader.load(App.class.getResource(fxml), ResourceBundle.getBundle("inmobiliaria.boundle"), new JavaFXBuilderFactory());
+        Parent page = (Parent) FXMLLoader.load(App.class.getResource("../" + fxml), ResourceBundle.getBundle("boundle"), new JavaFXBuilderFactory());
         Scene scene = stage.getScene();
         if (scene == null) {
             scene = new Scene(page, Toolkit.getDefaultToolkit().getScreenSize().getWidth(), Toolkit.getDefaultToolkit().getScreenSize().getHeight() - 70);
-            scene.getStylesheets().add(App.class.getResource("StyleSheet.css").toExternalForm());
+            scene.getStylesheets().add(App.class.getResource("../styles/StyleSheet.css").toExternalForm());
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);
@@ -128,5 +129,11 @@ public class App extends Application {
 	public void setAlquileresInmueblePersonaView(
 			AlquileresInmueblePersonaView alquileresInmueblePersonaView) {
 		this.alquileresInmueblePersonaView = alquileresInmueblePersonaView;
+	}
+
+	public TabPane getTabPane() {
+		if (tabPane == null )
+			tabPane = new TabPane();
+		return tabPane;
 	}
 }

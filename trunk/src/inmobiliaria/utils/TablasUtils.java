@@ -1,25 +1,12 @@
 package inmobiliaria.utils;
 
-import inmobiliaria.App;
-import inmobiliaria.model.AlquileresView;
 import inmobiliaria.model.Mes;
-
-import java.util.Calendar;
-import java.util.Date;
-
-import javafx.beans.property.StringProperty;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellEditEvent;
-import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
 /**
@@ -29,6 +16,7 @@ import javafx.util.Callback;
  */
 public final class TablasUtils {
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void armarColumnas(TableView proyectarInquilino) {
 		TableColumn colum0 = (TableColumn) proyectarInquilino.getColumns().get(0);
 		colum0.setCellValueFactory(new PropertyValueFactory("mesAnio"));
@@ -64,6 +52,7 @@ public final class TablasUtils {
 		colum3.setCellValueFactory(new PropertyValueFactory("cuotaNro"));
 		
 	}
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void armarColumnasHome(TableView alquileresACobrar) {
 		TableColumn colum0 = (TableColumn) alquileresACobrar.getColumns().get(0);
 		colum0.setCellValueFactory(new PropertyValueFactory("inquilinoNombreApellido"));
@@ -74,7 +63,7 @@ public final class TablasUtils {
 		TableColumn colum3 = (TableColumn) alquileresACobrar.getColumns().get(3);
 		colum3.setCellValueFactory(new PropertyValueFactory("periodo"));
 	}
-
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void armarColumnasConsultaAlquileres(TableView alquileresACobrar) {
 		TableColumn colum0 = (TableColumn) alquileresACobrar.getColumns().get(0);
 		colum0.setCellValueFactory(new PropertyValueFactory("nombreApellido"));

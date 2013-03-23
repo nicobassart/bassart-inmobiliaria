@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="ISO-8859"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
@@ -13,7 +14,7 @@
      	<fx:include source="header.fxml"/>
      </top>
      <center>
-		<GridPane alignment="top_center" hgap="8" vgap="8" style="-fx-padding: 40 0 0 0">
+		<GridPane alignment="top_center" hgap="8" vgap="8" style="-fx-padding: 40 0 0 0" styleClass="gradient">
             <children>
             	<Label text="Buscar" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
             	<Label text="%common.dueno" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
@@ -50,5 +51,8 @@
      <bottom>
      	<fx:include source="footer.fxml" />
      </bottom>
+	<stylesheets>
+    	<URL value="@StyleSheet.css" />
+	</stylesheets>
 </BorderPane>
  

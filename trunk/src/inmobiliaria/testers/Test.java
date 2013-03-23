@@ -1,10 +1,8 @@
 package inmobiliaria.testers;
 
 
-import inmobiliaria.entities.Cliente;
 import inmobiliaria.manager.SessionManager;
 
-import java.sql.Date;
 import org.hibernate.Session;
 
 public class Test {

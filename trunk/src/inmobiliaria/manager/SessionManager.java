@@ -6,11 +6,12 @@
 package inmobiliaria.manager;
 
 import java.util.Properties;
+
 import org.hibernate.HibernateException;
 import org.hibernate.MappingException;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.Session;
 
 public abstract class SessionManager {
     

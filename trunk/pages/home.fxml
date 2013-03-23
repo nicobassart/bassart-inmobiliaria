@@ -28,7 +28,7 @@
     </AnchorPane>
   </center>
   <stylesheets>
-    <URL value="@StyleSheet.css" />
+    <URL value="@styles/StyleSheet.css" />
   </stylesheets>
   <top>
     <fx:include source="header.fxml" />

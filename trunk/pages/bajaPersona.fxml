@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
@@ -8,14 +9,15 @@
 <?import javafx.scene.label.*?>
 <?import javafx.collections.*?>
 
+
+
 <BorderPane fx:controller="inmobiliaria.controller.BajaPersonaController"  xmlns:fx="http://javafx.com/fxml">
      <top>
      	<fx:include source="header.fxml"/>
      </top>
      <center>
-		<GridPane alignment="top_center" hgap="8" vgap="8" style="-fx-padding: 40 0 0 0">
+		<GridPane alignment="top_center" hgap="8" vgap="8" style="-fx-padding: 40 0 0 0" styleClass="gradient">
             <children>
-            
                 <Label text="Buscar" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
                 <Label text="%common.nombre" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
                 <Label text="%common.apellido" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
@@ -26,8 +28,6 @@
                 <Label text="Telefono Opcional" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
                 <Label text="Email" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
 
-                
-                
                 <Button fx:id="guardar" defaultButton="true" text="%common.buscar" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#processBuscarPersona" />
                 <TextField fx:id="nombre" prefColumnCount="20" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
                 <TextField fx:id="apellido" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
@@ -38,7 +38,6 @@
                 <TextField fx:id="tel_opcional" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
                 <TextField fx:id="email" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
 
- 
                 <Button fx:id="elimina" text="%common.eliminar" defaultButton="true" GridPane.columnIndex="1" GridPane.rowIndex="9" onAction="#processEliminarPersona" />
  
                 <Label fx:id="buttonStatusText" GridPane.columnIndex="1" GridPane.rowIndex="10" style="-fx-text-fill: #ff0000;"/>
@@ -48,4 +47,7 @@
      <bottom>
      	<fx:include source="footer.fxml" />
      </bottom>
+       <stylesheets>
+    <URL value="@StyleSheet.css" />
+  </stylesheets>
 </BorderPane>

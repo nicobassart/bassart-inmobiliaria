@@ -12,6 +12,6 @@
     <Label style="-fx-text-fill: white;-fx-font-size: 14" text="%copyRight" GridPane.columnIndex="1" GridPane.rowIndex="1" />
   </children>
   <stylesheets>
-    <URL value="@demo.css" />
+    <URL value="@styles/StyleSheet.css" />
   </stylesheets>
 </GridPane>

@@ -1,0 +1,23 @@
+
+.modal-dialog {
+	-fx-padding:20;
+	-fx-spacing:10;
+	-fx-alignment:center;
+	-fx-font-size:14;
+	-fx-background-color:linear-gradient(tobottom,derive(#f9edbe,10%),#f9edbe);
+	-fx-border-color:#f0c36a;
+	-fx-border-width:1;
+	-fx-background-insets:12;
+	-fx-background-color: #f9edbe;
+	-fx-border-insets:10;
+	-fx-border-radius:2;
+	-fx-background-radius:2;
+}
+ 
+.modal-dialog :pressed {
+	-fx-cursor:move;
+}
+ 
+.modal-dialog .button :pressed {
+	-fx-cursor:default;
+}

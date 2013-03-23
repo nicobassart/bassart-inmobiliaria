@@ -3,6 +3,7 @@ package inmobiliaria.controller;
 import inmobiliaria.App;
 import inmobiliaria.entities.Cliente;
 import inmobiliaria.manager.SessionManager;
+import inmobiliaria.utils.MessageBox;
 import inmobiliaria.utils.UtilValidarCampos;
 
 import java.net.URL;
@@ -80,18 +81,19 @@ public class AltaPersonaController implements Initializable {
 			TextField nroDoc2, TextField email2) {
 		String errorAcum="";
 
-		if(!UtilValidarCampos.notEmptyString(apellido2.getText())) errorAcum += "Debe ingresar apellido.";
+		if(!UtilValidarCampos.notEmptyString(apellido2.getText())) errorAcum += "Debe ingresar apellido.\n";
 		
-		if(!UtilValidarCampos.notEmptyString(nombre2.getText())) errorAcum += "Debe ingresar nombre.";
+		if(!UtilValidarCampos.notEmptyString(nombre2.getText())) errorAcum += "Debe ingresar nombre.\n";
 			
-		if(!UtilValidarCampos.notEmptyString(nroDoc2.getText())) errorAcum += "Debe ingresar nÃºmero de documento.";
+		if(!UtilValidarCampos.notEmptyString(nroDoc2.getText())) errorAcum += "Debe ingresar número de documento.\n";
 			
-		if(!UtilValidarCampos.notEmptyString(email2.getText())) errorAcum += "Debe ingresar email.";
+		if(!UtilValidarCampos.notEmptyString(email2.getText())) errorAcum += "Debe ingresar email.\n";
 		
-		if(!UtilValidarCampos.isNumeric(nroDoc2.getText())) errorAcum+= ("El nÃºmero de documento debe ser nÃºmerico.");
+		if(!UtilValidarCampos.isNumeric(nroDoc2.getText())) errorAcum+= ("El número de documento debe ser númerico.\n");
 		
 		if(!errorAcum.isEmpty()){ 
-			error.setText(errorAcum); 
+			error.setText(errorAcum);
+			MessageBox a = new MessageBox((App.getInstance().getStage()),errorAcum);
 			return false;
 		}
 	
