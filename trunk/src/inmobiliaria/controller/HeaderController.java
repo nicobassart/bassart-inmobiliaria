@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
 import javafx.scene.control.TabPane;
 import javafx.scene.input.MouseEvent;
@@ -15,6 +16,7 @@ import javafx.scene.input.MouseEvent;
 public class HeaderController implements Initializable  {
 	@FXML 
 	private Label titulo;
+
 	@FXML
 	private TabPane tabPane;
 
@@ -79,12 +81,13 @@ public class HeaderController implements Initializable  {
 	}
 	
 	@FXML
-	protected void contextMenu(ActionEvent event) throws Exception {
-		System.out.println("home.fxml");
+	protected void changed(MouseEvent event) throws Exception {
+		App.getInstance().setTabSeleccionado(tabPane.getSelectionModel().getSelectedIndex());
 	}
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		titulo.setText(App.getInstance().getTitulo());
-		//tabPane=App.getInstance().getTabPane();
+		tabPane.getSelectionModel().select(App.getInstance().getTabSeleccionado());
 	}
 }

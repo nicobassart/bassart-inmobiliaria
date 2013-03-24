@@ -13,9 +13,9 @@
     <Label fx:id="titulo" alignment="TOP_RIGHT" style="-fx-text-fill: #111111;-fx-padding: 2;" />
   </bottom>
   <center>
-    <TabPane fx:id="tabPane" blendMode="SRC_OVER" depthTest="DISABLE" focusTraversable="true" maxWidth="-Infinity" pickOnBounds="false" prefHeight="117.0" rotateGraphic="false" side="TOP" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="67.0" visible="true" onContextMenuRequested="#contextMenu">
+    <TabPane fx:id="tabPane" blendMode="SRC_OVER" depthTest="DISABLE" focusTraversable="true" maxWidth="-Infinity" pickOnBounds="false" prefHeight="117.0" rotateGraphic="false" side="TOP" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="67.0" visible="true" onMouseClicked="#changed">
       <tabs>
-        <Tab text="">
+        <Tab text="" >
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="750.0" prefHeight="55.0" prefWidth="+Infinity">
               <children>
@@ -31,7 +31,7 @@
           <graphic>
             <ImageView fitHeight="57.150001525878906" fitWidth="58.118645079781245" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="file:/C:/Users/Nico/Desktop/CompartidoVM/Aplicacion%20Inmobiliarias/inicio/mano1.png" />
+                <Image url="img/mano.png" />
               </image>
             </ImageView>
           </graphic>
@@ -56,10 +56,14 @@
           <graphic>
             <ImageView fitHeight="0.0" fitWidth="0.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="file:/C:/Users/Nico/Desktop/CompartidoVM/Aplicacion%20Inmobiliarias/inicio/persona2.png" />
+                <Image url="img/persona.png" />
               </image>
             </ImageView>
           </graphic>
+			<tooltip>
+            	<Tooltip text="Clientes" />
+			</tooltip>
+    
         </Tab>
         <Tab text="">
           <content>
@@ -76,10 +80,14 @@
           <graphic>
             <ImageView fitHeight="0.0" fitWidth="0.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="file:/C:/Users/Nico/Desktop/CompartidoVM/Aplicacion%20Inmobiliarias/inicio/venciminetos4.png" />
+                <Image url="img/venciminetos.png" />
               </image>
             </ImageView>
           </graphic>
+      	<tooltip>
+            <Tooltip text="Vencimientos" />
+          </tooltip>
+    
         </Tab>
         <Tab text="">
           <content>
@@ -98,10 +106,14 @@
           <graphic>
             <ImageView fitHeight="0.0" fitWidth="0.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="file:/C:/Users/Nico/Desktop/CompartidoVM/Aplicacion%20Inmobiliarias/inicio/propiedades4.png" />
+                <Image url="img/propiedades.png" />
               </image>
             </ImageView>
           </graphic>
+		<tooltip>
+            <Tooltip text="Propiedades" />
+          </tooltip>
+    
         </Tab>
       </tabs>
     </TabPane>

@@ -6,6 +6,7 @@ import inmobiliaria.entities.CuotasInquilino;
 import inmobiliaria.manager.SessionManager;
 import inmobiliaria.model.Mes;
 import inmobiliaria.utils.DateUtil;
+import inmobiliaria.utils.MessageBox;
 import inmobiliaria.utils.TablasUtils;
 import inmobiliaria.utils.UtilValidarCampos;
 
@@ -67,11 +68,6 @@ public class NuevoAlquilerController  implements Initializable  {
     @FXML protected void processGuardar(ActionEvent event) throws Exception{
     	if(!this.validarFormGuardar(nombreInquilino,calle,importeDeposito,porcentajeDueno,tableDataInquilino)) return;
     	
-    	
-		BorderPane par = (BorderPane) App.getInstance().getScene().getRoot();
-
-		GridPane grid = (GridPane) par.getCenter();
-
 		Session session = SessionManager.getSession();
 
 		session.beginTransaction();
@@ -199,26 +195,26 @@ public class NuevoAlquilerController  implements Initializable  {
 			TextField porcentajeDueno2, ObservableList<Mes> tableDataInquilino2) {
 
 		String errorAcum="";
-		error.setText("");
 
-		if(!UtilValidarCampos.notEmptyString(nombreInquilino2.getText())) errorAcum += "Debe buscar un inquilino.";
-		
-		if(!UtilValidarCampos.notEmptyString(calle2.getText())) errorAcum += "Debe buscar una vivienda.";
-		
-		if(!UtilValidarCampos.notEmptyString(porcentajeDueno2.getText())) errorAcum += "Completar campo Cobrar DueÃ±o con un porcentaje de comisiÃ³n.";
-		
-		if(!UtilValidarCampos.notEmptyString(importeDeposito2.getText())) errorAcum += "Completar campo importe deposito , si no tiene deposito ingresar 0.";
-		
-		if(!UtilValidarCampos.isNumeric(importeDeposito2.getText())) errorAcum += "El importe deposito debe ser numerico";
-		
-		if(!UtilValidarCampos.isNumeric(porcentajeDueno2.getText())) errorAcum += "El porcentaje de comisiÃ³n debe ser entre el 0 y el 80, sin el signo %";
-		
-		if(!UtilValidarCampos.isNumeric(importeInquilino.getText())) errorAcum += "Debe ingresar un importe a cobrar al inquilino";
-		
-		if(tableDataInquilino2 ==null || tableDataInquilino2.isEmpty()) errorAcum += "Debe presionar el boton proyectar para generar las cuotas.";
 
-		if(!errorAcum.isEmpty()){ 
-			error.setText(errorAcum); 
+		if(!UtilValidarCampos.notEmptyString(nombreInquilino2.getText())) errorAcum += "Debe buscar un inquilino.\n";
+		
+		if(!UtilValidarCampos.notEmptyString(calle2.getText())) errorAcum += "Debe buscar una vivienda.\n";
+		
+		if(!UtilValidarCampos.notEmptyString(porcentajeDueno2.getText())) errorAcum += "Completar campo Cobrar Dueño con un porcentaje de comisión.\n";
+		
+		if(!UtilValidarCampos.notEmptyString(importeDeposito2.getText())) errorAcum += "Completar campo importe deposito , si no tiene deposito ingresar 0.\n";
+		
+		if(!UtilValidarCampos.isNumeric(importeDeposito2.getText())) errorAcum += "El importe deposito debe ser numerico.\n";
+		
+		if(!UtilValidarCampos.isNumeric(porcentajeDueno2.getText())) errorAcum += "El porcentaje de comisión debe ser entre el 0 y el 80, sin el signo %.\n";
+		
+		if(!UtilValidarCampos.isNumeric(importeInquilino.getText())) errorAcum += "Debe ingresar un importe a cobrar al inquilino.\n";
+		
+		if(tableDataInquilino2 ==null || tableDataInquilino2.isEmpty()) errorAcum += "Debe presionar el boton proyectar para generar las cuotas.\n";
+
+		if(!errorAcum.isEmpty()){
+			MessageBox a = new MessageBox((App.getInstance().getStage()),errorAcum);
 			return false;
 		}
 	

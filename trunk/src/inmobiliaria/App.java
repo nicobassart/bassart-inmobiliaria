@@ -17,7 +17,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TabPane;
 import javafx.stage.Stage;
 
 public class App extends Application {
@@ -30,13 +29,22 @@ public class App extends Application {
 	//Son los titulos que aparece en la parte superior
 	private String titulo;
 	private Stage stage;
-	private TabPane tabPane;
-    private Persona persona;
+	private int tabSeleccionado=0;
+
+	private Persona persona;
     private Inmueble inmueble;
     private AlquileresView alquilerViewHome;
     private AlquileresInmueblePersonaView alquileresInmueblePersonaView ;
 
 	private static App instance;
+
+	public int getTabSeleccionado() {
+		return tabSeleccionado;
+	}
+	
+	public void setTabSeleccionado(int tabSeleccionado) {
+		this.tabSeleccionado = tabSeleccionado;
+	}
 
     public App() {
         instance = this;
@@ -129,11 +137,5 @@ public class App extends Application {
 	public void setAlquileresInmueblePersonaView(
 			AlquileresInmueblePersonaView alquileresInmueblePersonaView) {
 		this.alquileresInmueblePersonaView = alquileresInmueblePersonaView;
-	}
-
-	public TabPane getTabPane() {
-		if (tabPane == null )
-			tabPane = new TabPane();
-		return tabPane;
 	}
 }

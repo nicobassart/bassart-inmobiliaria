@@ -29,7 +29,6 @@ public class AltaPersonaController implements Initializable {
 	@FXML private TextField tel_celular;
 	@FXML private TextField tel_opcional;
 	@FXML private TextField email;
-	@FXML private Label error;
 	
     @Override 
     public void initialize(URL location, ResourceBundle resources) {
@@ -92,7 +91,6 @@ public class AltaPersonaController implements Initializable {
 		if(!UtilValidarCampos.isNumeric(nroDoc2.getText())) errorAcum+= ("El número de documento debe ser númerico.\n");
 		
 		if(!errorAcum.isEmpty()){ 
-			error.setText(errorAcum);
 			MessageBox a = new MessageBox((App.getInstance().getStage()),errorAcum);
 			return false;
 		}

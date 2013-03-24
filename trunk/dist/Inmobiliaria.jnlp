@@ -11,7 +11,7 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Inmobiliaria.jar" size="123899" download="eager" />
+    <jar href="Inmobiliaria.jar" size="185875" download="eager" />
     <jar href="antlr-2.7.6.jar" size="443432" download="eager" />
     <jar href="cglib-nodep-2.1_3.jar" size="324238" download="eager" />
     <jar href="commons-beanutils-1.8.3.jar" size="232019" download="eager" />
