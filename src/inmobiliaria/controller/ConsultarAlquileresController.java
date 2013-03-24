@@ -65,8 +65,9 @@ public class ConsultarAlquileresController implements Initializable {
 						super.updateItem(value, empty);
 
 						final VBox vbox = new VBox(1);
-						Image image = new Image(getClass().getResourceAsStream("/inmobiliaria/eliminar.png"));
-						Button button = new Button("", new ImageView(image));
+//						Image image = new Image(getClass().getResourceAsStream("/pages/img/eliminar.png"));
+//						Button button = new Button("", new ImageView(image));
+						Button button = new Button("Eliminar");
 						button.getStyleClass().add("deleteButton");
 						button.setStyle("-fx-padding: 2;");
 						final TableCell<AlquileresInmueblePersonaView,String> c = this;
@@ -131,8 +132,9 @@ public class ConsultarAlquileresController implements Initializable {
 						super.updateItem(value, empty);
 
 						final VBox vbox = new VBox(1);
-						Image image = new Image(getClass().getResourceAsStream("/inmobiliaria/eliminar.png"));
-						Button button = new Button("", new ImageView(image));
+						//Image image = new Image(getClass().getResourceAsStream("/pages/img/eliminar.png"));
+//						Button button = new Button("Elimina", new ImageView(image));
+						Button button = new Button("Elimina");
 						button.getStyleClass().add("deleteButton");
 						button.setStyle("-fx-padding: 2;");
 						final TableCell<AlquileresInmueblePersonaView,String> c = this;

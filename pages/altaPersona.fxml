@@ -50,12 +50,6 @@
     </GridPane>
   </center>
   <top>
-    <fx:include source="header.fxml">
-      <bottom>
-        <HBox>
-          <Label fx:id="error" textFill="RED" />
-        </HBox>
-      </bottom>
-    </fx:include>
+    <fx:include source="header.fxml" />
   </top>
 </BorderPane>
