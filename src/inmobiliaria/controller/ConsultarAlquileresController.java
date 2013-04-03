@@ -38,6 +38,7 @@ public class ConsultarAlquileresController implements Initializable {
 		tableDataAlquileres.setItems(null);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		Session session = SessionManager.getSession();
@@ -66,8 +67,6 @@ public class ConsultarAlquileresController implements Initializable {
 						super.updateItem(value, empty);
 
 						final VBox vbox = new VBox(1);
-//						Image image = new Image(getClass().getResourceAsStream("/pages/img/eliminar.png"));
-//						Button button = new Button("", new ImageView(image));
 						Button button = new Button("Eliminar");
 						button.getStyleClass().add("deleteButton");
 						button.setStyle("-fx-padding: 2;");
@@ -75,7 +74,7 @@ public class ConsultarAlquileresController implements Initializable {
 						button.setOnAction(new EventHandler<ActionEvent>() {
 							@Override
 							public void handle(ActionEvent event) {
-								TableRow tableRow = c.getTableRow();
+								TableRow<?> tableRow = c.getTableRow();
 								AlquileresInmueblePersonaView adl = (AlquileresInmueblePersonaView)tableRow.getItem();
 								App.getInstance().setAlquileresInmueblePersonaView(adl);
 								try {
@@ -85,6 +84,7 @@ public class ConsultarAlquileresController implements Initializable {
 								}
 							}
 						});
+						button.setVisible((c.getTableView().getItems().size()>c.getIndex()));
 						vbox.getChildren().add(button);
 						setGraphic(vbox);
 					}
@@ -105,64 +105,4 @@ public class ConsultarAlquileresController implements Initializable {
 			TableView<AlquileresInmueblePersonaView> tableDataAlquileres) {
 		this.tableDataAlquileres = tableDataAlquileres;
 	}
-	
-
-
-	@FXML
-	protected void processBuscar(ActionEvent event) {
-
-		Session session = SessionManager.getSession();
-		
-		List<AlquileresInmueblePersona> cuota = session.createQuery("FROM inmobiliaria.entities.AlquileresInmueblePersona").list();
-		listaAlquileres = tableDataAlquileres.getItems(); 
-		Iterator<AlquileresInmueblePersona> itVendedores = cuota.iterator();
-		while (itVendedores.hasNext()) {
-			AlquileresInmueblePersona alquiler = itVendedores.next();
-			listaAlquileres.add(new AlquileresInmueblePersonaView(alquiler));
-		}
-		TablasUtils.armarColumnasConsultaAlquileres(tableDataAlquileres);
-		tableDataAlquileres.setItems(listaAlquileres);
-
-		
-		TableColumn<AlquileresInmueblePersonaView, String> actionCol =  (TableColumn <AlquileresInmueblePersonaView, String>) tableDataAlquileres.getColumns().get(3);
-		actionCol.setCellFactory(new Callback<TableColumn<AlquileresInmueblePersonaView, String>, TableCell<AlquileresInmueblePersonaView, String>>() {
-			@Override
-			public TableCell<AlquileresInmueblePersonaView, String> call(TableColumn<AlquileresInmueblePersonaView, String> arg0) {
-				final TableCell<AlquileresInmueblePersonaView,String> cell = new TableCell<AlquileresInmueblePersonaView,String>() {
-					@Override
-					public void updateItem(String value, boolean empty) {
-						super.updateItem(value, empty);
-
-						final VBox vbox = new VBox(1);
-						//Image image = new Image(getClass().getResourceAsStream("/pages/img/eliminar.png"));
-//						Button button = new Button("Elimina", new ImageView(image));
-						Button button = new Button("Elimina");
-						button.getStyleClass().add("deleteButton");
-						button.setStyle("-fx-padding: 2;");
-						final TableCell<AlquileresInmueblePersonaView,String> c = this;
-						button.setOnAction(new EventHandler<ActionEvent>() {
-							@Override
-							public void handle(ActionEvent event) {
-								TableRow tableRow = c.getTableRow();
-								AlquileresInmueblePersonaView adl = (AlquileresInmueblePersonaView)tableRow.getItem();
-								App.getInstance().setAlquileresInmueblePersonaView(adl);
-								try {
-									App.getInstance().replaceSceneContent("preEliminarAlquiler.fxml");
-								} catch (Exception e) {
-									e.printStackTrace();
-								}
-							}
-						});
-						vbox.getChildren().add(button);
-						setGraphic(vbox);
-					}
-				};
-
-				return cell;
-			}
-
-		});
-
-	}
-	
 }

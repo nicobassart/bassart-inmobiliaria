@@ -9,10 +9,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 
 import org.hibernate.Session;
 
@@ -36,9 +33,6 @@ public class BajaPropiedadController implements Initializable {
     		calleDpto.setText(App.getInstance().getInmueble().getInmuebleEntiti().getCalleDpto());
     	}
 	}
-    @FXML protected void processBuscarPropiedad(ActionEvent event) throws Exception{
-    	App.getInstance().replaceSceneContent(App.buscarInmueble);
-    }
     
 	@FXML
 	protected void processEliminar(ActionEvent event) throws Exception {
@@ -46,12 +40,6 @@ public class BajaPropiedadController implements Initializable {
 		Session session = SessionManager.getSession();
 
 		session.beginTransaction();
-
-		BorderPane par = (BorderPane) App.getInstance().getScene().getRoot();
-
-		GridPane grid = (GridPane) par.getCenter();
-
-		ChoiceBox<String> combo = (ChoiceBox<String>) grid.getChildren().get(12);
 
 		session.delete(App.getInstance().getInmueble().getInmuebleEntiti());
 

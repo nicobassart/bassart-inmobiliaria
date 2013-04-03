@@ -25,7 +25,6 @@
             <TableColumn maxWidth="70.0" minWidth="70.0" prefWidth="70.0" text="Eliminar" />
           </columns>
         </TableView>
-        <!-- Button fx:id="buscar" defaultButton="true" layoutX="10.0" layoutY="25.0" onAction="#processBuscar" prefHeight="21.0" prefWidth="61.0" text="Buscar" /-->
       </children>
     </AnchorPane>
   </center>

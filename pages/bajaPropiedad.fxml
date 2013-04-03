@@ -16,7 +16,7 @@
      <center>
 		<GridPane alignment="top_center" hgap="8" vgap="8" style="-fx-padding: 40 0 0 0" styleClass="gradient">
             <children>
-            	<Label text="Buscar" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            	<!-- Label text="Buscar" GridPane.columnIndex="0" GridPane.rowIndex="0"/-->
             	<Label text="%common.dueno" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
                 <Label text="%common.calle" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
                 <Label text="%common.calleNro" GridPane.columnIndex="0" GridPane.rowIndex="3" />
@@ -25,7 +25,7 @@
                 <Label text="Provincia" GridPane.columnIndex="0" GridPane.rowIndex="6" />
                 <Label text="Localidad" GridPane.columnIndex="0" GridPane.rowIndex="7" />
                 
-                <Button fx:id="guardar" defaultButton="true" text="%common.buscar" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#processBuscarPropiedad" />
+                <!-- Button defaultButton="true" text="%common.buscar" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#processBuscarPropiedad" /-->
                 <TextField fx:id="nombreDueno" promptText="Nombre del Dueno" GridPane.columnIndex="1" GridPane.rowIndex="1" editable="false" />
                 <TextField fx:id="calle" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
                 <TextField fx:id="calleNro" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="3"/>

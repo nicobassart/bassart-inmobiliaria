@@ -13,7 +13,7 @@
     <fx:include source="footer.fxml" />
   </bottom>
   <center>
-    <GridPane alignment="TOP_CENTER" hgap="3.0" style="-fx-padding: 10 10 10 10">
+    <GridPane alignment="TOP_CENTER" hgap="3.0" style="-fx-padding: 10 10 10 10" styleClass="gradient">
       <children>
         <Label text="%common.buscar" GridPane.columnIndex="0" GridPane.rowIndex="0" />
         <TextField fx:id="filterField" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="0" />
@@ -23,7 +23,9 @@
           <columns>
             <TableColumn text="Calle" />
             <TableColumn text="Numero" />
-            <TableColumn editable="false" text="Piso" />
+            <TableColumn text="Piso" />
+            <TableColumn maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="Borrar" />
+            <TableColumn maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="Editar" />
           </columns>
         </TableView>
       </children>

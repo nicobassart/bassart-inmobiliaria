@@ -11,8 +11,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 
 import org.hibernate.Session;
 
@@ -24,6 +22,8 @@ public class ModificacionPropiedadController implements Initializable {
 	@FXML private TextField provincia;
 	@FXML private TextField localidad;
 	@FXML private TextField nombreDueno;
+	@FXML private ChoiceBox<String> comboProvincia;
+	
 
 	@FXML private ChoiceBox<String> choice = new ChoiceBox<String>();
 
@@ -38,9 +38,7 @@ public class ModificacionPropiedadController implements Initializable {
     		calleDpto.setText(App.getInstance().getInmueble().getInmuebleEntiti().getCalleDpto());
     	}
 	}
-    @FXML protected void processBuscarPropiedad(ActionEvent event) throws Exception{
-    	App.getInstance().replaceSceneContent(App.buscarInmueble);
-    }
+
 	@FXML
 	protected void processUpdate(ActionEvent event) throws Exception {
 
@@ -48,12 +46,6 @@ public class ModificacionPropiedadController implements Initializable {
 
 		session.beginTransaction();
 
-		BorderPane par = (BorderPane) App.getInstance().getScene().getRoot();
-
-		GridPane grid = (GridPane) par.getCenter();
-
-		ChoiceBox<String> combo = (ChoiceBox<String>) grid.getChildren().get(12);
-		
 		App.getInstance().getInmueble().getInmuebleEntiti().setCalle(calle.getText());
 		App.getInstance().getInmueble().getInmuebleEntiti().setCalleDpto(calleDpto.getText());
 		App.getInstance().getInmueble().getInmuebleEntiti().setCallePiso(callePiso.getText());

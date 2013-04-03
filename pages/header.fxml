@@ -29,7 +29,7 @@
             </AnchorPane>
           </content>
           <graphic>
-            <ImageView fitHeight="57.150001525878906" fitWidth="58.118645079781245" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+            <ImageView mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
               <image>
                 <Image url="img/mano.png" />
               </image>
@@ -38,33 +38,6 @@
           <tooltip>
             <Tooltip text="Alquileres" />
           </tooltip>
-        </Tab>
-        <Tab text="">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="750.0" prefHeight="55.0" prefWidth="+Infinity">
-              <children>
-                <ToolBar layoutY="0.0" prefHeight="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                  <items>
-                    <Button mnemonicParsing="false" onAction="#altaPersona" text="Nueva" />
-                    <Button mnemonicParsing="false" onAction="#bajaPersona" text="Eliminar" />
-                    <Button mnemonicParsing="false" onAction="#modificacionPersona" text="Modificar" />
-                    <Button mnemonicParsing="false" onAction="#processBuscarPersona" text="Consultar" />
-                  </items>
-                </ToolBar>
-              </children>
-            </AnchorPane>
-          </content>
-          <graphic>
-            <ImageView fitHeight="0.0" fitWidth="0.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="img/persona.png" />
-              </image>
-            </ImageView>
-          </graphic>
-			<tooltip>
-            	<Tooltip text="Clientes" />
-			</tooltip>
-    
         </Tab>
         <Tab text="">
           <content>
@@ -96,9 +69,33 @@
               <children>
                 <ToolBar layoutY="0.0" prefHeight="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                   <items>
+                    <Button mnemonicParsing="false" onAction="#altaPersona" text="Nueva" />
+                    <Button mnemonicParsing="false" onAction="#processBuscarPersona" text="Consultar" />
+                  </items>
+                </ToolBar>
+              </children>
+            </AnchorPane>
+          </content>
+          <graphic>
+            <ImageView fitHeight="0.0" fitWidth="0.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="img/persona.png" />
+              </image>
+            </ImageView>
+          </graphic>
+			<tooltip>
+            	<Tooltip text="Clientes" />
+			</tooltip>
+    
+        </Tab>
+        <Tab text="">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="750.0" prefHeight="55.0" prefWidth="+Infinity">
+              <children>
+                <ToolBar layoutY="0.0" prefHeight="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <items>
                     <Button mnemonicParsing="false" onAction="#altaPropiedad" text="Nueva" />
-                    <Button mnemonicParsing="false" onAction="#bajaPropiedad" text="Eliminar" />
-                    <Button mnemonicParsing="false" onAction="#modificacionPropiedad" text="Modificacion" />
+                    <Button mnemonicParsing="false" onAction="#processBuscarPropiedad" text="Consultar" />
                   </items>
                 </ToolBar>
               </children>

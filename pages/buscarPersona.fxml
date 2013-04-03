@@ -20,12 +20,15 @@
         <TextField fx:id="filterField" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="0" />
         <!-- Button fx:id="buscar" defaultButton="true" onAction="#processBuscar" text="Buscar" GridPane.columnIndex="3" GridPane.rowIndex="0" /-->
         <Label style="-fx-text-fill: #ff0000;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-        <TableView id="PersonasView" fx:id="tableDataPersonas" prefWidth="399.0" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="3">
+        <TableView id="PersonasView" fx:id="tableDataPersonas" prefWidth="700" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="3">
           <columns>
-            <TableColumn text="Nombre" />
-            <TableColumn text="Apellido" />
-            <TableColumn text="Email" />
-            <TableColumn text="Acciones" />
+            <TableColumn minWidth="100.0" text="Nombre" />
+            <TableColumn minWidth="100.0" text="Apellido" />
+            <TableColumn minWidth="60.0" text="Email" />
+            <TableColumn text="Movil" />
+            <TableColumn text="Fijo" />
+            <TableColumn maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="Borrar" />
+            <TableColumn maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="Editar" />
           </columns>
         </TableView>
       </children>
