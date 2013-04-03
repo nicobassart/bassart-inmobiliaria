@@ -49,10 +49,13 @@ public class ConsultarAlquileresController implements Initializable {
 			AlquileresInmueblePersona alquiler = itVendedores.next();
 			listaAlquileres.add(new AlquileresInmueblePersonaView(alquiler));
 		}
-		TablasUtils.armarColumnasConsultaAlquileres(tableDataAlquileres);
+
 		tableDataAlquileres.setItems(listaAlquileres);
 
-		
+		TablasUtils.armarColumnasConsultaAlquileres(tableDataAlquileres);
+
+		tableDataAlquileres.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
 		TableColumn<AlquileresInmueblePersonaView, String> actionCol =  (TableColumn <AlquileresInmueblePersonaView, String>) tableDataAlquileres.getColumns().get(3);
 		actionCol.setCellFactory(new Callback<TableColumn<AlquileresInmueblePersonaView, String>, TableCell<AlquileresInmueblePersonaView, String>>() {
 			@Override
@@ -91,6 +94,7 @@ public class ConsultarAlquileresController implements Initializable {
 			}
 
 		});
+
 	}
 
 	public TableView<AlquileresInmueblePersonaView> getTableDataAlquileres() {

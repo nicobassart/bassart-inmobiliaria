@@ -48,6 +48,7 @@
                     <Button mnemonicParsing="false" onAction="#altaPersona" text="Nueva" />
                     <Button mnemonicParsing="false" onAction="#bajaPersona" text="Eliminar" />
                     <Button mnemonicParsing="false" onAction="#modificacionPersona" text="Modificar" />
+                    <Button mnemonicParsing="false" onAction="#processBuscarPersona" text="Consultar" />
                   </items>
                 </ToolBar>
               </children>
@@ -71,7 +72,7 @@
               <children>
                 <ToolBar layoutY="0.0" prefHeight="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                   <items>
-                    <Button mnemonicParsing="false" text="Vencimientos" />
+                    <Button mnemonicParsing="false" text="Vencimientos" onAction="#volver"/>
                   </items>
                 </ToolBar>
               </children>
@@ -122,3 +123,4 @@
     <URL value="@styles/StyleSheet.css" />
   </stylesheets>
 </BorderPane>
+

@@ -70,13 +70,19 @@ public class HeaderController implements Initializable  {
 		App.getInstance().replaceSceneContent("nuevoAlquiler.fxml");
 	}
 
+	@FXML 
+	protected void processBuscarPersona(ActionEvent event) throws Exception{
+		App.getInstance().clear();
+		App.getInstance().replaceSceneContent(App.buscarPersona);
+	}
+
 	@FXML
 	protected void consultarAlquileres(ActionEvent event) throws Exception {
 		App.getInstance().replaceSceneContent("consultarAlquileres.fxml");
 	}
 
 	@FXML
-	protected void volver(MouseEvent event) throws Exception {
+	protected void volver(ActionEvent event) throws Exception {
 		App.getInstance().replaceSceneContent("home.fxml");
 	}
 	
