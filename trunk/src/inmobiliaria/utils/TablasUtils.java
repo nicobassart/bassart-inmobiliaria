@@ -73,6 +73,7 @@ public final class TablasUtils {
 		colum2.setCellValueFactory(new PropertyValueFactory("estado"));
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void armarColumnasConsultarPagos(TableView mesesalquiler) {
 		TableColumn colum0 = (TableColumn) mesesalquiler.getColumns().get(0);
 		colum0.setCellValueFactory(new PropertyValueFactory("mesAnio"));

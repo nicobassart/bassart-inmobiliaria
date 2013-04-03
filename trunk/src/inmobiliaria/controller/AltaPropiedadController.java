@@ -12,8 +12,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 
 import org.hibernate.Session;
 
@@ -40,16 +38,9 @@ public class AltaPropiedadController implements Initializable {
     }
 	@FXML
 	protected void processUpdate(ActionEvent event) throws Exception {
-
 		Session session = SessionManager.getSession();
 
 		session.beginTransaction();
-
-		BorderPane par = (BorderPane) App.getInstance().getScene().getRoot();
-
-		GridPane grid = (GridPane) par.getCenter();
-
-		ChoiceBox<String> combo = (ChoiceBox<String>) grid.getChildren().get(12);
 
 		Inmueble c1 = new Inmueble(calle.getText(), calleNro.getText(),
 				callePiso.getText(), calleDpto.getText(), 1, 1,App.getInstance().getPersona().getPersonaEntiti());

@@ -2,6 +2,7 @@
 
 <?import java.lang.*?>
 <?import java.net.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.label.*?>
 <?import javafx.scene.layout.*?>
@@ -14,14 +15,14 @@
     <fx:include source="footer.fxml" />
   </bottom>
   <center>
-    <AnchorPane prefHeight="500.0" prefWidth="700.0" BorderPane.alignment="TOP_CENTER">
+    <AnchorPane prefHeight="479.0" prefWidth="703.0" styleClass="gradient" BorderPane.alignment="CENTER">
       <children>
-        <TableView fx:id="tableDataAlquileres" layoutY="50.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+        <TableView fx:id="tableDataAlquileres" maxHeight="600.0" minHeight="200.0" minWidth="200.0" prefHeight="-1.0" prefWidth="-1.0" styleClass="table-view-1" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0">
           <columns>
-            <TableColumn prefWidth="200.0" text="Nombre Apellido" />
-            <TableColumn prefWidth="140.0" text="Dirección" />
-            <TableColumn prefWidth="85.0" text="Estado" />
-            <TableColumn prefWidth="70.0" text="Eliminar" />
+            <TableColumn maxWidth="800.0" minWidth="200.0" prefWidth="400.0" text="Nombre Apellido" />
+            <TableColumn maxWidth="800.0" minWidth="200.0" prefWidth="400.0" text="Dirección" />
+            <TableColumn maxWidth="200.0" minWidth="100.0" prefWidth="200.0" text="Estado" />
+            <TableColumn maxWidth="70.0" minWidth="70.0" prefWidth="70.0" text="Eliminar" />
           </columns>
         </TableView>
         <!-- Button fx:id="buscar" defaultButton="true" layoutX="10.0" layoutY="25.0" onAction="#processBuscar" prefHeight="21.0" prefWidth="61.0" text="Buscar" /-->

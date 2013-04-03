@@ -49,7 +49,7 @@
         </TableView>
       </children>
       <stylesheets>
-        <URL value="@StyleSheet.css" />
+        <URL value="@style/StyleSheet.css" />
       </stylesheets>
     </AnchorPane>
   </center>

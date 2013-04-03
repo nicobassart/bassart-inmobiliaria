@@ -20,10 +20,16 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
@@ -127,6 +133,32 @@ public class HomeController implements Initializable {
 				});
 
 
+		//7777777
+		
+ ContextMenu cm = new ContextMenu();
+		MenuItem cmItem1 = new MenuItem("Copy Image");
+		cmItem1.setOnAction(new EventHandler<ActionEvent>() {
+		    public void handle(ActionEvent e) {
+		        Clipboard clipboard = Clipboard.getSystemClipboard();
+		        ClipboardContent content = new ClipboardContent();
+		        //content.putImage(pic.getImage());
+		        clipboard.setContent(content);
+		    }
+		});
+
+		cm.getItems().add(cmItem1);
+		tableDataInquilino.setContextMenu(cm);
+//		tableDataInquilino.buildEventDispatchChain(arg0)
+//		tableDataInquilino.getContextMenu().addEventHandler(MouseEvent.MOUSE_CLICKED,
+//		    new EventHandler<MouseEvent>() {
+//		        @Override public void handle(MouseEvent e) {
+//		           // if (e.getButton() == MouseButton.SECONDARY)  
+//		               // cm.show(pic, e.getScreenX(), e.getScreenY());
+//		        }
+//		});
+		//777777
+		
+		
 		
 	}
 }

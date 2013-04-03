@@ -3,9 +3,6 @@ package inmobiliaria.entities;
 import java.io.Serializable;
 
 public class Inmueble implements Serializable {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private Long idInmueble;
 
