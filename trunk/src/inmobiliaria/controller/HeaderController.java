@@ -8,7 +8,6 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
 import javafx.scene.control.TabPane;
 import javafx.scene.input.MouseEvent;
@@ -75,6 +74,10 @@ public class HeaderController implements Initializable  {
 		App.getInstance().clear();
 		App.getInstance().replaceSceneContent(App.buscarPersona);
 	}
+    @FXML protected void processBuscarPropiedad(ActionEvent event) throws Exception{
+    	App.getInstance().clear();
+    	App.getInstance().replaceSceneContent(App.buscarInmueble);
+    }
 
 	@FXML
 	protected void consultarAlquileres(ActionEvent event) throws Exception {

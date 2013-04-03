@@ -16,7 +16,6 @@
      <center>
 		<GridPane alignment="top_center" hgap="8" vgap="8" style="-fx-padding: 40 0 0 0" styleClass="gradient">
             <children>
-            	<Label text="Buscar" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
             	<Label text="%common.dueno" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
                 <Label text="%common.calle" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
                 <Label text="%common.calleNro" GridPane.columnIndex="0" GridPane.rowIndex="3" />
@@ -25,13 +24,12 @@
                 <Label text="Provincia" GridPane.columnIndex="0" GridPane.rowIndex="6" />
                 <Label text="Localidad" GridPane.columnIndex="0" GridPane.rowIndex="7" />
                 
-                <Button fx:id="guardar" text="%common.buscar" defaultButton="true" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#processBuscarPropiedad" />
                 <TextField fx:id="nombreDueno" promptText="Nombre del Dueno" GridPane.columnIndex="1" GridPane.rowIndex="1" editable="false" />
                 <TextField fx:id="calle" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
                 <TextField fx:id="calleNro" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
                 <TextField fx:id="callePiso" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
                 <TextField fx:id="calleDpto" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
-                <ChoiceBox fx:id="choice" GridPane.columnIndex="1" GridPane.rowIndex="6" >
+                <ChoiceBox fx:id="comboProvincia" GridPane.columnIndex="1" GridPane.rowIndex="6" >
                     <items>
 				        <FXCollections fx:factory="observableArrayList">
 				            <String fx:value="Buenos Aires"/>

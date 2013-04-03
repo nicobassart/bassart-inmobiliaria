@@ -18,7 +18,6 @@
      <center>
 		<GridPane alignment="top_center" hgap="8" vgap="8" style="-fx-padding: 40 0 0 0" styleClass="gradient">
             <children>
-                <Label text="Buscar" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
                 <Label text="%common.nombre" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
                 <Label text="%common.apellido" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
                 <Label text="Tipo Documento" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
@@ -28,7 +27,6 @@
                 <Label text="Telefono Opcional" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
                 <Label text="Email" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
 
-                <Button fx:id="guardar" defaultButton="true" text="%common.buscar" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#processBuscarPersona" />
                 <TextField fx:id="nombre" prefColumnCount="20" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
                 <TextField fx:id="apellido" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
                 <TextField fx:id="tipoDoc" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="3"/>

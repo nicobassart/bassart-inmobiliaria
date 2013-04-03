@@ -15,14 +15,20 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
+import javafx.util.Callback;
 
 import org.hibernate.Session;
 
@@ -35,6 +41,7 @@ public class BuscarInmuebleController implements Initializable {
 	private ObservableList<Inmueble> masterData = FXCollections.observableArrayList();
 	private ObservableList<Inmueble> filteredData = FXCollections.observableArrayList();
 
+	@SuppressWarnings("unchecked")
 	public BuscarInmuebleController(){
 		Session session = SessionManager.getSession();
 
@@ -67,9 +74,89 @@ public class BuscarInmuebleController implements Initializable {
 
 		TableColumn colum2 = (TableColumn) tableDataInmuebles.getColumns().get(2);
 		colum2.setCellValueFactory(new PropertyValueFactory("callePiso"));
+		
+		TableColumn<Inmueble, String> actionCol =  (TableColumn <Inmueble, String>) tableDataInmuebles.getColumns().get(3);
+		actionCol.setCellFactory(new Callback<TableColumn<Inmueble, String>, TableCell<Inmueble, String>>() {
+
+					@Override
+					public TableCell<Inmueble, String> call(TableColumn<Inmueble, String> arg0) {
+						final TableCell<Inmueble,String> cell = new TableCell<Inmueble,String>() {
+							@Override
+							public void updateItem(String value, boolean empty) {
+								super.updateItem(value, empty);
+
+								final VBox vbox = new VBox(1);
+								Button button = new Button("Borrar");
+								button.getStyleClass().add("button");
+								button.setStyle("-fx-padding: 2;");
+								button.minWidth(80);
+								final TableCell<Inmueble,String> c = this;
+								button.setOnAction(new EventHandler<ActionEvent>() {
+									@Override
+									public void handle(ActionEvent event) {
+										TableRow tableRow = c.getTableRow();
+										Inmueble adl = (Inmueble)tableRow.getItem();
+										App.getInstance().setInmueble(adl);
+										try {
+											App.getInstance().replaceSceneContent("bajaPropiedad.fxml");
+										} catch (Exception e) {
+											e.printStackTrace();
+										}
+									}
+								});
+								button.setVisible((c.getTableView().getItems().size()>c.getIndex()));
+								vbox.getChildren().add(button);
+								setGraphic(vbox);
+							}
+						};
+
+						return cell;
+					}
+
+				});
+		TableColumn<Inmueble, String> actionColEditar =  (TableColumn <Inmueble, String>) tableDataInmuebles.getColumns().get(4);
+		actionColEditar.setCellFactory(new Callback<TableColumn<Inmueble, String>, TableCell<Inmueble, String>>() {
+
+					@Override
+					public TableCell<Inmueble, String> call(TableColumn<Inmueble, String> arg0) {
+						final TableCell<Inmueble,String> cell = new TableCell<Inmueble,String>() {
+							@Override
+							public void updateItem(String value, boolean empty) {
+								super.updateItem(value, empty);
+
+								final VBox vbox = new VBox(1);
+								Button button = new Button("Editar");
+								button.getStyleClass().add("button");
+								button.setStyle("-fx-padding: 2;");
+								button.minWidth(80);
+								final TableCell<Inmueble,String> c = this;
+								button.setOnAction(new EventHandler<ActionEvent>() {
+									@Override
+									public void handle(ActionEvent event) {
+										TableRow tableRow = c.getTableRow();
+										Inmueble adl = (Inmueble)tableRow.getItem();
+										App.getInstance().setInmueble(adl);
+										try {
+											App.getInstance().replaceSceneContent("modificacionPropiedad.fxml");
+										} catch (Exception e) {
+											e.printStackTrace();
+										}
+									}
+								});
+								button.setVisible((c.getTableView().getItems().size()>c.getIndex()));
+								vbox.getChildren().add(button);
+								setGraphic(vbox);
+							}
+						};
+
+						return cell;
+					}
+
+				});
 
 		tableDataInmuebles.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 		tableDataInmuebles.setItems(filteredData);
+		tableDataInmuebles.setEditable(false);
 		tableDataInmuebles.setOnMousePressed(new EventHandler<MouseEvent>() {
 				@Override
 				public void handle(MouseEvent arg0) {
@@ -83,7 +170,6 @@ public class BuscarInmuebleController implements Initializable {
 					}
 				}
 			});
-		tableDataInmuebles.setEditable(false);
 
 		filterField.textProperty().addListener(new ChangeListener<String>() {
 			@Override

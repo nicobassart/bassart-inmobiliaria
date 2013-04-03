@@ -103,6 +103,7 @@ public class App extends Application {
     }
     public void clear(){
     	persona=null;
+    	inmueble=null;
     }
     // Getters y Stters
 	public String getTitulo() {
