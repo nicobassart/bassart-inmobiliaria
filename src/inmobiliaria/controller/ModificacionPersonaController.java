@@ -84,4 +84,9 @@ public class ModificacionPersonaController implements Initializable {
 		}
 
     }
+	@FXML
+	protected void processVolver(ActionEvent event) {
+		App.getInstance().pageAnterior();
+	}
+
 }

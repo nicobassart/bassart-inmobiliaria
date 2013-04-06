@@ -16,7 +16,6 @@
      <center>
 		<GridPane alignment="top_center" hgap="8" vgap="8" style="-fx-padding: 40 0 0 0" styleClass="gradient">
             <children>
-            	<!-- Label text="Buscar" GridPane.columnIndex="0" GridPane.rowIndex="0"/-->
             	<Label text="%common.dueno" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
                 <Label text="%common.calle" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
                 <Label text="%common.calleNro" GridPane.columnIndex="0" GridPane.rowIndex="3" />
@@ -25,19 +24,18 @@
                 <Label text="Provincia" GridPane.columnIndex="0" GridPane.rowIndex="6" />
                 <Label text="Localidad" GridPane.columnIndex="0" GridPane.rowIndex="7" />
                 
-                <!-- Button defaultButton="true" text="%common.buscar" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#processBuscarPropiedad" /-->
-                <TextField fx:id="nombreDueno" promptText="Nombre del Dueno" GridPane.columnIndex="1" GridPane.rowIndex="1" editable="false" />
-                <TextField fx:id="calle" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-                <TextField fx:id="calleNro" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-                <TextField fx:id="callePiso" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-                <TextField fx:id="calleDpto" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
-                <TextField fx:id="provincia" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
-                <TextField fx:id="localidad" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                <TextField fx:id="nombreDueno" editable="false" promptText="Nombre del Dueno" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <TextField fx:id="calle"    editable="false" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <TextField fx:id="calleNro" editable="false" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <TextField fx:id="callePiso" editable="false" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <TextField fx:id="calleDpto" editable="false" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                <TextField fx:id="provincia" editable="false" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                <TextField fx:id="localidad" editable="false" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
  
-                <Button fx:id="guardar" defaultButton="true" text="%common.eliminar" GridPane.columnIndex="1" GridPane.rowIndex="8" onAction="#processEliminar" />
-
+                <Button defaultButton="true" text="%common.eliminar" GridPane.columnIndex="1" GridPane.rowIndex="8" onAction="#processEliminar" />
+                <Button text="%common.volver" defaultButton="true" GridPane.columnIndex="2" GridPane.rowIndex="8" onAction="#processVolver" />
  
-                <Label fx:id="buttonStatusText" GridPane.columnIndex="1" GridPane.rowIndex="4" style="-fx-text-fill: #ff0000;"/>
+                <Label GridPane.columnIndex="1" GridPane.rowIndex="4" style="-fx-text-fill: #ff0000;"/>
             </children>
         </GridPane>
      </center>

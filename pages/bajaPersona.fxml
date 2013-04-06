@@ -27,18 +27,19 @@
                 <Label text="Telefono Opcional" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
                 <Label text="Email" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
 
-                <TextField fx:id="nombre" prefColumnCount="20" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                <TextField fx:id="apellido" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-                <TextField fx:id="tipoDoc" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-                <TextField fx:id="nroDoc" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-                <TextField fx:id="tel_fijo" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
-                <TextField fx:id="tel_celular" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
-                <TextField fx:id="tel_opcional" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
-                <TextField fx:id="email" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+                <TextField fx:id="nombre" prefColumnCount="20"  editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <TextField fx:id="apellido" prefColumnCount="10" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <TextField fx:id="tipoDoc" prefColumnCount="10"  editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <TextField fx:id="nroDoc" prefColumnCount="10" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <TextField fx:id="tel_fijo" prefColumnCount="10" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                <TextField fx:id="tel_celular" prefColumnCount="10" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                <TextField fx:id="tel_opcional" prefColumnCount="10" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                <TextField fx:id="email" prefColumnCount="10" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
 
-                <Button fx:id="elimina" text="%common.eliminar" defaultButton="true" GridPane.columnIndex="1" GridPane.rowIndex="9" onAction="#processEliminarPersona" />
+                <Button text="%common.eliminar" defaultButton="true" GridPane.columnIndex="1" GridPane.rowIndex="9" onAction="#processEliminarPersona" />
+                <Button text="%common.volver" defaultButton="true" GridPane.columnIndex="2" GridPane.rowIndex="9" onAction="#processVolver" />
  
-                <Label fx:id="buttonStatusText" GridPane.columnIndex="1" GridPane.rowIndex="10" style="-fx-text-fill: #ff0000;"/>
+                <Label GridPane.columnIndex="1" GridPane.rowIndex="10" style="-fx-text-fill: #ff0000;"/>
             </children>
         </GridPane>
      </center>

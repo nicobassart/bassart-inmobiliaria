@@ -24,26 +24,18 @@
                 <Label text="Provincia" GridPane.columnIndex="0" GridPane.rowIndex="5" />
                 <Label text="Localidad" GridPane.columnIndex="0" GridPane.rowIndex="6" />
                 
-                <TextField fx:id="nombreDueno" promptText="Nombre del DueÃ±o" GridPane.columnIndex="1" GridPane.rowIndex="0" editable="false" />
+                <TextField fx:id="nombreDueno" promptText="Nombre del Dueño" GridPane.columnIndex="1" GridPane.rowIndex="0" editable="false" />
                 <TextField fx:id="calle" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
                 <TextField fx:id="calleNro" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
                 <TextField fx:id="callePiso" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
                 <TextField fx:id="calleDpto" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-                <ChoiceBox fx:id="choice" GridPane.columnIndex="1" GridPane.rowIndex="5" >
-                    <items>
-				        <FXCollections fx:factory="observableArrayList">
-				            <String fx:value="Buenos Aires"/>
-				            <String fx:value="Catamarca"/>
-				            <String fx:value="Santa Fe"/>
-				        </FXCollections>
-				    </items>
-				</ChoiceBox>
+                <ChoiceBox fx:id="choice" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                 <TextField fx:id="localidad" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
  
-                <Button fx:id="guardar" text="%common.guardar" defaultButton="true"  GridPane.columnIndex="1" GridPane.rowIndex="7" onAction="#processUpdate" />
-                <Button fx:id="buscar" text="%common.buscar" defaultButton="true"  GridPane.columnIndex="2" GridPane.rowIndex="0" onAction="#processBuscarPersona" />
+                <Button text="%common.guardar" defaultButton="true"  GridPane.columnIndex="1" GridPane.rowIndex="7" onAction="#processUpdate" />
+                <Button text="%common.buscar" defaultButton="true"  GridPane.columnIndex="2" GridPane.rowIndex="0" onAction="#processBuscarPersona" />
  
-                <Label fx:id="buttonStatusText" GridPane.columnIndex="1" GridPane.rowIndex="4" style="-fx-text-fill: #ff0000;"/>
+                <Label GridPane.columnIndex="1" GridPane.rowIndex="4" style="-fx-text-fill: #ff0000;"/>
             </children>
         </GridPane>
      </center>

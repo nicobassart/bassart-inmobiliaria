@@ -52,4 +52,8 @@ public class BajaPropiedadController implements Initializable {
 		App.getInstance().replaceSceneContent(App.messages_ok);
 
 	}
+	@FXML
+	protected void processVolver(ActionEvent event) {
+		App.getInstance().pageAnterior();
+	}
 }

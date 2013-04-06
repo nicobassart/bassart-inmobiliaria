@@ -61,4 +61,9 @@ public class BajaPersonaController implements Initializable {
 		}
 
     }
+	@FXML
+	protected void processVolver(ActionEvent event) {
+		App.getInstance().pageAnterior();
+	}
+
 }
