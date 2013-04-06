@@ -2,11 +2,16 @@ package inmobiliaria.controller;
 
 import inmobiliaria.App;
 import inmobiliaria.entities.Inmueble;
+import inmobiliaria.entities.Provincias;
 import inmobiliaria.manager.SessionManager;
+import inmobiliaria.model.AlquileresInmueblePersonaView;
 
 import java.net.URL;
+import java.util.Iterator;
+import java.util.List;
 import java.util.ResourceBundle;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -24,14 +29,23 @@ public class AltaPropiedadController implements Initializable {
 	@FXML private TextField localidad;
 	@FXML private TextField nombreDueno;
 
-	@FXML private ChoiceBox<String> choice = new ChoiceBox<String>();
-
+	@FXML private ChoiceBox<String> choice;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
     	if(App.getInstance().getPersona()!=null)
     		nombreDueno.setText(App.getInstance().getPersona().nombreCompleto());
+    	
+		Session session = SessionManager.getSession();
 
+		List<Provincias> cuota = session.createQuery("FROM inmobiliaria.entities.Provincias").list();
+
+		Iterator<Provincias> itVendedores = cuota.iterator();
+
+		while (itVendedores.hasNext()) {
+			Provincias prov = itVendedores.next();
+			choice.getItems().add(prov.getIdprovincias(),  prov.getNombre());
+		}
 	}
     @FXML protected void processBuscarPersona(ActionEvent event) throws Exception{
     	App.getInstance().replaceSceneContent(App.buscarPersona);

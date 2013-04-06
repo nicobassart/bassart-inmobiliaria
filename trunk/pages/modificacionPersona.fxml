@@ -48,6 +48,7 @@
 
  
                 <Button text="%common.modificar" defaultButton="true" GridPane.columnIndex="1" GridPane.rowIndex="9" onAction="#processEliminarPersona" />
+                <Button text="%common.volver" defaultButton="true" GridPane.columnIndex="2" GridPane.rowIndex="9" onAction="#processVolver" />
  
                 <Label GridPane.columnIndex="1" GridPane.rowIndex="10" style="-fx-text-fill: #ff0000;"/>
             </children>

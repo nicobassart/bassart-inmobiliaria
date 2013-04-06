@@ -40,9 +40,10 @@
 				</ChoiceBox>
                 <TextField fx:id="localidad" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
  
-                <Button fx:id="guardar" text="%common.actualizar" defaultButton="true" GridPane.columnIndex="1" GridPane.rowIndex="8" onAction="#processUpdate" />
+                <Button text="%common.actualizar" defaultButton="true" GridPane.columnIndex="1" GridPane.rowIndex="8" onAction="#processUpdate" />
+                <Button text="%common.volver" defaultButton="true" GridPane.columnIndex="2" GridPane.rowIndex="8" onAction="#processVolver" />
  
-                <Label fx:id="buttonStatusText" GridPane.columnIndex="1" GridPane.rowIndex="4" style="-fx-text-fill: #ff0000;"/>
+                <Label GridPane.columnIndex="1" GridPane.rowIndex="4" style="-fx-text-fill: #ff0000;"/>
             </children>
         </GridPane>
      </center>
