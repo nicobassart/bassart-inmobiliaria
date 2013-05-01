@@ -34,9 +34,9 @@
         <TextField fx:id="fechaFin" minHeight="26.0" prefColumnCount="10" promptText="29-01-2014" style="-fx-lines: 30;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
         <TextField fx:id="importeDeposito" minHeight="26.0" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="4" />
         <TextField fx:id="importeInquilino" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-        <Button fx:id="Proyectar" defaultButton="true" minWidth="70.0" onAction="#proyectarInquilino" text="Proyectar" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+        <Button defaultButton="true" minWidth="70.0" onAction="#proyectarInquilino" text="Proyectar" GridPane.columnIndex="2" GridPane.rowIndex="5" />
         <TextField fx:id="porcentajeDueno" minHeight="26.0" prefColumnCount="10" promptText="20 (porcentaje sobre la cuota)" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-        <TableView fx:id="1" maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="1" GridPane.columnSpan="9" GridPane.rowIndex="6">
+        <TableView maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="1" GridPane.columnSpan="9" GridPane.rowIndex="6">
           <columns>
             <TableColumn prefWidth="100.0" text="Mes/Año" />
             <TableColumn prefWidth="100.0" text="Porcentaje" />
@@ -50,9 +50,9 @@
         <CheckBox fx:id="telefono" text="Telefono" GridPane.columnIndex="2" GridPane.rowIndex="10" />
         <CheckBox fx:id="internet" text="Internet" GridPane.columnIndex="1" GridPane.rowIndex="11" />
         <CheckBox fx:id="agua" text="Agua" GridPane.columnIndex="2" GridPane.rowIndex="11" />
-        <Button fx:id="guardar" defaultButton="true" minWidth="70.0" onAction="#processGuardar" text="%common.guardar" GridPane.columnIndex="2" GridPane.rowIndex="12" />
-        <Button id="buscar" fx:id="buscarInquilino" defaultButton="true" minWidth="70.0" onAction="#processBuscarPersona" text="%common.buscar" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-        <Button id="buscar" fx:id="buscarInmueble" defaultButton="true" minWidth="70.0" onAction="#processBuscarInmueble" text="%common.buscar" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <Button defaultButton="true" minWidth="70.0" onAction="#processGuardar" text="%common.guardar" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+        <Button id="buscar" defaultButton="true" minWidth="70.0" onAction="#processBuscarPersona" text="%common.buscar" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+        <Button id="buscar" defaultButton="true" minWidth="70.0" onAction="#processBuscarInmueble" text="%common.buscar" GridPane.columnIndex="2" GridPane.rowIndex="1" />
       </children>
       <BorderPane.margin>
         <Insets top="40.0" />

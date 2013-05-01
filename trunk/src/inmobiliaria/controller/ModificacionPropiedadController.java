@@ -47,6 +47,7 @@ public class ModificacionPropiedadController implements Initializable {
 		session.beginTransaction();
 
 		App.getInstance().getInmueble().getInmuebleEntiti().setCalle(calle.getText());
+		App.getInstance().getInmueble().getInmuebleEntiti().setCalleNro(calleNro.getText());
 		App.getInstance().getInmueble().getInmuebleEntiti().setCalleDpto(calleDpto.getText());
 		App.getInstance().getInmueble().getInmuebleEntiti().setCallePiso(callePiso.getText());
 		App.getInstance().getInmueble().getInmuebleEntiti().setLocalidad(1);
