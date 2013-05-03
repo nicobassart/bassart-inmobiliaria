@@ -10,7 +10,7 @@
 
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="inmobiliaria.controller.HeaderController">
   <bottom>
-    <Label fx:id="titulo" alignment="TOP_RIGHT" style="-fx-text-fill: #111111;-fx-padding: 2;" />
+    <Label fx:id="titulo" alignment="TOP_RIGHT" style="-fx-text-fill: #111111;-fx-padding: 2;"  visible="false"/>
   </bottom>
   <center>
     <TabPane fx:id="tabPane" blendMode="SRC_OVER" depthTest="DISABLE" focusTraversable="true" maxWidth="-Infinity" pickOnBounds="false" prefHeight="117.0" rotateGraphic="false" side="TOP" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="67.0" visible="true" onMouseClicked="#changed">

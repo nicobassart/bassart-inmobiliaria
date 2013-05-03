@@ -18,7 +18,6 @@
         <Label text="%common.buscar" GridPane.columnIndex="0" GridPane.rowIndex="0" />
         <TextField fx:id="filterField" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="0" />
         <!-- Button fx:id="buscar" defaultButton="true" onAction="#processBuscar" text="Buscar" GridPane.columnIndex="3" GridPane.rowIndex="0" /-->
-        <Label style="-fx-text-fill: #ff0000;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
         <TableView id="InmueblesView" fx:id="tableDataInmuebles" prefWidth="352.0" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="3">
           <columns>
             <TableColumn text="Calle" />
