@@ -2,7 +2,6 @@ package inmobiliaria.reporte;
 
 import inmobiliaria.App;
 
-import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -26,11 +25,10 @@ public class ManagerReporte {
 		int subtotal = impor - comi;
 		String cuota =  App.getInstance().getAlquilerViewHome().getIdCuota().toString();
 		String cuotaNro= App.getInstance().getAlquilerViewHome().cuotaFomateada();
-		String porcentaje = App.getInstance().getAlquilerViewHome().getPorcentajeDueno();
+		//String porcentaje = App.getInstance().getAlquilerViewHome().getPorcentajeDueno();
 		String nombredueno = App.getInstance().getAlquilerViewHome().nombreDuenoCompleta();
 		
 		//El importe dueno es el importe menos el porcentaje que se le cobra al dueno
-		String importeDueno;
 		String comision  = String.valueOf(comi);
 		String netoDueno = String.valueOf(subtotal+totalServicios);
 		String netoInquilino = String.valueOf(impor + totalServicios);
@@ -53,9 +51,6 @@ public class ManagerReporte {
 			
 			Collection<String> colec = new ArrayList<String>();
 			colec.add("field");
-
-			String pat = new File(".").getAbsolutePath();
-			
 
 			JasperPrint print = JasperFillManager.fillReport(App.class.getResourceAsStream("reporte//comprobante_limpio.jasper"), parameters, new JRBeanCollectionDataSource(colec));
 			
