@@ -28,8 +28,6 @@ import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
@@ -54,6 +52,7 @@ public class HomeController implements Initializable {
 		
 		Session session = SessionManager.getSession();
 
+		@SuppressWarnings("unchecked")
 		List<CuotasInquilinosPersonaInmuebleDueno> cuota = session.createQuery("FROM inmobiliaria.entities.CuotasInquilinosPersonaInmuebleDueno").list();
 
 		Iterator<CuotasInquilinosPersonaInmuebleDueno> itVendedores = cuota.iterator();

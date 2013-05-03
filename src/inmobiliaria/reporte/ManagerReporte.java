@@ -2,7 +2,6 @@ package inmobiliaria.reporte;
 
 import inmobiliaria.App;
 
-import java.awt.Desktop;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -11,10 +10,10 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.view.JasperViewer;
 
 public class ManagerReporte {
 	
@@ -54,24 +53,27 @@ public class ManagerReporte {
 			
 			Collection<String> colec = new ArrayList<String>();
 			colec.add("field");
+
+			String pat = new File(".").getAbsolutePath();
 			
-			JasperPrint print = JasperFillManager.fillReport("C://prueba//comprobante.jasper", parameters, new JRBeanCollectionDataSource(colec));
+
+			JasperPrint print = JasperFillManager.fillReport(App.class.getResourceAsStream("reporte//comprobante_limpio.jasper"), parameters, new JRBeanCollectionDataSource(colec));
 			
-			JasperExportManager.exportReportToPdfFile(print,"C:\\prueba\\comprobante_" +  nombredueno +"_" + cuota +".pdf");
-			
-			//JasperViewer.viewReport(print,true);
-			try {
-				File path = new File ("C:\\prueba\\comprobante_" +  nombredueno +"_" + cuota +".pdf");
-				Desktop.getDesktop().open(path);
-				} catch (Exception e) {
-				}
+			JasperViewer.viewReport(print);
+//			JasperViewer.exportReportToPdfFile(print,"C:\\prueba\\comprobante_" +  nombredueno +"_" + cuota +".pdf");
+//			try {
+//				File path = new File ("C:\\prueba\\comprobante_" +  nombredueno +"_" + cuota +".pdf");
+//				Desktop.getDesktop().open(path);
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
+
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 		}
 		finally {
+			
 		}
-		
-		
 	}
 }
