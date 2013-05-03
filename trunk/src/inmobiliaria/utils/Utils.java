@@ -1,9 +1,11 @@
 package inmobiliaria.utils;
 
 public class Utils {
+
 	static public String padIzq(String in){
 		return in.format("%10s", in);
 	}
+
 	static public String formatearCalle(String calle, String calleNro,String callePiso,String calleDpto){
 
 		if(calleNro!=null && !"".equals(calleNro))

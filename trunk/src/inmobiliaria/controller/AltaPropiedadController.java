@@ -4,14 +4,12 @@ import inmobiliaria.App;
 import inmobiliaria.entities.Inmueble;
 import inmobiliaria.entities.Provincias;
 import inmobiliaria.manager.SessionManager;
-import inmobiliaria.model.AlquileresInmueblePersonaView;
 
 import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -31,6 +29,7 @@ public class AltaPropiedadController implements Initializable {
 
 	@FXML private ChoiceBox<String> choice;
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
     	if(App.getInstance().getPersona()!=null)
@@ -67,6 +66,5 @@ public class AltaPropiedadController implements Initializable {
 		session.close();
 
 		App.getInstance().replaceSceneContent(App.messages_ok);
-
 	}
 }
