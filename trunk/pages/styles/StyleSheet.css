@@ -100,3 +100,15 @@
 .center{
 	    -fx-background-color:linear-gradient(white,#DDDDDD);
 }
+.search-box-field{
+    -fx-background-color: white;
+    -fx-background-insets: 1;
+    -fx-background-radius: 15;
+    -fx-padding: -9 5 -11 0;
+    -fx-border-image-source: url("search-box1.png");
+    -fx-border-image-slice: 14 12 12 22 fill;
+    -fx-border-image-width: 12 12 12 22;
+    -fx-border-image-repeat: stretch; 
+    -fx-font-size: 13px;
+    -fx-prompt-text-fill: grey;
+}

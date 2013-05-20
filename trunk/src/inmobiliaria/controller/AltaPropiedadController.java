@@ -56,7 +56,7 @@ public class AltaPropiedadController implements Initializable {
 		session.beginTransaction();
 
 		Inmueble c1 = new Inmueble(calle.getText(), calleNro.getText(),
-				callePiso.getText(), calleDpto.getText(), 1, 1,App.getInstance().getPersona().getPersonaEntiti());
+				callePiso.getText(), calleDpto.getText(), choice.selectionModelProperty().getValue().getSelectedIndex(), 1,App.getInstance().getPersona().getPersonaEntiti());
 		session.save(c1);
 
 		// Compromete los cambios
