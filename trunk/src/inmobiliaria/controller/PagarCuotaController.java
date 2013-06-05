@@ -4,6 +4,7 @@ import inmobiliaria.App;
 import inmobiliaria.entities.Alquileres;
 import inmobiliaria.entities.CuotasInquilino;
 import inmobiliaria.entities.Pagos;
+import inmobiliaria.interfaces.IAlquileresView;
 import inmobiliaria.manager.SessionManager;
 import inmobiliaria.model.AlquileresView;
 import inmobiliaria.reporte.ManagerReporte;
@@ -78,7 +79,7 @@ public class PagarCuotaController implements Initializable {
 		// Cierra la sesion de trabajo
 		session.close();
 		
-		ManagerReporte.generarComprobante(this.calcularServicio());
+		ManagerReporte.generarComprobante(this.calcularServicio(),(IAlquileresView)App.getInstance().getAlquilerViewHome());
 		
 		App.getInstance().replaceSceneContent(App.messages_ok);
 	}

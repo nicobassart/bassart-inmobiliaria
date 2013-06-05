@@ -18,6 +18,7 @@ import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class App extends Application {
 	public static final String messages_ok="messages_ok.fxml";
@@ -37,7 +38,10 @@ public class App extends Application {
     private AlquileresInmueblePersonaView alquileresInmueblePersonaView ;
 
 	private static App instance;
-
+	
+//    ImageIcon icono,fondo;
+//    TrayIcon trayicon;
+    
 	public int getTabSeleccionado() {
 		return tabSeleccionado;
 	}
@@ -59,8 +63,18 @@ public class App extends Application {
     }
 
     public void start(Stage primaryStage) {
+//    	   icono=new ImageIcon(getClass().getResource("../img/logo.png"));
+//    	   fondo=new ImageIcon(getClass().getResource("../img/logo.png"));
+//    	   trayicon=new TrayIcon(icono.getImage(),"Java Zone",null);
+//    	   try {
+//    		    SystemTray.getSystemTray().add(trayicon);
+//    		   } catch (AWTException e1) {
+//    		    // TODO Auto-generated catch block
+//    		    e1.printStackTrace();
+//    		   }
         try {
             stage = primaryStage;
+            stage.initStyle(StageStyle.UNDECORATED);
 	        replaceSceneContent("home.fxml");
             primaryStage.show();
         } catch (Exception ex) {
@@ -93,9 +107,10 @@ public class App extends Application {
         }
         stage.sizeToScene();
         
+        
         return page;
     }
-    public Scene getScene(){
+	public Scene getScene(){
     	return stage.getScene();
     }
     public Stage getStage(){

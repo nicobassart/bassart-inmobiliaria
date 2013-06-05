@@ -8,12 +8,13 @@ import inmobiliaria.utils.DateUtil;
 import inmobiliaria.utils.Utils;
 
 import java.io.Serializable;
+import java.lang.reflect.Constructor;
 import java.util.Date;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class AlquileresView implements Serializable,IAlquileresView {
+public class AlquileresPagosView implements Serializable,IAlquileresView {
 
 	private static final long serialVersionUID = 1L;
 	private Long idAlquiler;
@@ -38,7 +39,7 @@ public class AlquileresView implements Serializable,IAlquileresView {
     private String apellidoDueno;
     private String porcentajeDueno;
     private Alquileres alquileres;
-    private CuotasInquilinosPersonaInmuebleDueno cuota;
+    private CuotasPagasInquilinosPersonaInmuebleDueno cuota;
 
 	public StringProperty getInquilinoNombreApellido() {
 		return inquilinoNombreApellido;
@@ -71,7 +72,7 @@ public class AlquileresView implements Serializable,IAlquileresView {
 		return Utils.formatearNomApe(apellidoDueno, nombreDueno);
 	}
 	
-	public AlquileresView(String inquilinoNombreApellido, String calle,String calleNro,String callePiso,String calleDpto, String importeCobrar,String periodo,Long idInmueble, Long idcuota,Long idAlquiler,Date fecha, String nombreDueno, String apellidoDueno, String porcentajeDueno,CuotasInquilinosPersonaInmuebleDueno cuota) {
+	public AlquileresPagosView(String inquilinoNombreApellido, String calle,String calleNro,String callePiso,String calleDpto, String importeCobrar,String periodo,Long idInmueble, Long idcuota,Long idAlquiler,Date fecha, String nombreDueno, String apellidoDueno, String porcentajeDueno,CuotasPagasInquilinosPersonaInmuebleDueno cuota) {
         this.inquilinoNombreApellido = new SimpleStringProperty(inquilinoNombreApellido);
         this.calleCompleta = new SimpleStringProperty(Utils.formatearCalle(calle, calleNro, callePiso, calleDpto));
         this.importeCobrar = new SimpleStringProperty(importeCobrar);
@@ -90,10 +91,10 @@ public class AlquileresView implements Serializable,IAlquileresView {
         this.cuota=cuota;
     }
 	
-    public CuotasInquilinosPersonaInmuebleDueno getCuota() {
+    public CuotasPagasInquilinosPersonaInmuebleDueno getCuota() {
 		return cuota;
 	}
-	public void setCuota(CuotasInquilinosPersonaInmuebleDueno cuota) {
+	public void setCuota(CuotasPagasInquilinosPersonaInmuebleDueno cuota) {
 		this.cuota = cuota;
 	}
 	public StringProperty inquilinoNombreApellidoProperty() { return inquilinoNombreApellido; }

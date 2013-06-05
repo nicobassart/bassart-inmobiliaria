@@ -7,10 +7,30 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.ImageView?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="inmobiliaria.controller.HeaderController">
+  <top>
+	<BorderPane style="-fx-background-color: #4C4C4C" onMouseClicked="#onMouseClicked" onMousePressed="#onMousePressed" onMouseDragged="#onMouseDragged">
+		<left>
+			<ImageView fitHeight="0.0" fitWidth="0.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+				<image>
+					<Image url="img/logo.png" />
+				</image>
+			</ImageView>
+		</left>
+		<right>
+			<ToolBar style="-fx-background-color: #4C4C4C"  maxHeight="15" prefHeight="15" fx:id="toolBar" />
+		</right> 
+	</BorderPane>
+  </top>
   <bottom>
-    <Label fx:id="titulo" alignment="TOP_RIGHT" style="-fx-text-fill: #111111;-fx-padding: 2;"  visible="false"/>
+    <Label  fx:id="titulo" alignment="TOP_RIGHT" style="-fx-text-fill: #111111;-fx-padding: 2;"  visible="false"/>
   </bottom>
   <center>
     <TabPane fx:id="tabPane" blendMode="SRC_OVER" depthTest="DISABLE" focusTraversable="true" maxWidth="-Infinity" pickOnBounds="false" prefHeight="117.0" rotateGraphic="false" side="TOP" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="67.0" visible="true" onMouseClicked="#changed">
@@ -46,6 +66,7 @@
                 <ToolBar layoutY="0.0" prefHeight="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                   <items>
                     <Button mnemonicParsing="false" text="Vencimientos" onAction="#volver"/>
+                    <Button mnemonicParsing="false" text="Historico" onAction="#vencimientosHisto"/>
                   </items>
                 </ToolBar>
               </children>
@@ -108,10 +129,9 @@
               </image>
             </ImageView>
           </graphic>
-		<tooltip>
-            <Tooltip text="Propiedades" />
-          </tooltip>
-    
+			<tooltip>
+	            <Tooltip text="Propiedades" />
+	        </tooltip>
         </Tab>
       </tabs>
     </TabPane>

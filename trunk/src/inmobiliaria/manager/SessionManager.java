@@ -89,6 +89,7 @@ public abstract class SessionManager {
         config.addResource("inmobiliaria/entities/Provincias.hbm.xml");
         config.addResource("inmobiliaria/entities/CuotasInquilino.hbm.xml");
         config.addResource("inmobiliaria/entities/CuotasInquilinosPersonaInmuebleDueno.hbm.xml");
+        config.addResource("inmobiliaria/entities/CuotasPagasInquilinosPersonaInmuebleDueno.hbm.xml");
         config.addResource("inmobiliaria/entities/Pagos.hbm.xml");
         config.addResource("inmobiliaria/entities/AlquileresInmueblePersona.hbm.xml");
     }

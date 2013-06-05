@@ -2,8 +2,12 @@ package inmobiliaria.controller;
 
 import inmobiliaria.App;
 import inmobiliaria.entities.CuotasInquilinosPersonaInmuebleDueno;
+import inmobiliaria.entities.CuotasPagasInquilinosPersonaInmuebleDueno;
+import inmobiliaria.interfaces.IAlquileresView;
 import inmobiliaria.manager.SessionManager;
+import inmobiliaria.model.AlquileresPagosView;
 import inmobiliaria.model.AlquileresView;
+import inmobiliaria.reporte.ManagerReporte;
 import inmobiliaria.utils.TablasUtils;
 import inmobiliaria.utils.Utils;
 
@@ -34,14 +38,14 @@ import javafx.util.Callback;
 import org.apache.commons.lang.StringUtils;
 import org.hibernate.Session;
 
-public class HomeController implements Initializable {
+public class VencimientosHistoController implements Initializable {
 
 	@FXML
-	private TableView<AlquileresView> tableDataInquilino = new TableView<AlquileresView>();
+	private TableView<AlquileresPagosView> tableDataInquilino = new TableView<AlquileresPagosView>();
 
-	private List<AlquileresView> listaAlquileres;
+	private List<AlquileresPagosView> listaAlquileres;
 
-	public HomeController() {
+	public VencimientosHistoController() {
 		
 	}
 
@@ -53,11 +57,11 @@ public class HomeController implements Initializable {
 		Session session = SessionManager.getSession();
 
 		@SuppressWarnings("unchecked")
-		List<CuotasInquilinosPersonaInmuebleDueno> cuota = session.createQuery("FROM inmobiliaria.entities.CuotasInquilinosPersonaInmuebleDueno").list();
+		List<CuotasPagasInquilinosPersonaInmuebleDueno> cuota = session.createQuery("FROM inmobiliaria.entities.CuotasPagasInquilinosPersonaInmuebleDueno").list();
 
-		Iterator<CuotasInquilinosPersonaInmuebleDueno> itVendedores = cuota.iterator();
+		Iterator<CuotasPagasInquilinosPersonaInmuebleDueno> itVendedores = cuota.iterator();
 		while (itVendedores.hasNext()) {
-			CuotasInquilinosPersonaInmuebleDueno cli = itVendedores.next();
+			CuotasPagasInquilinosPersonaInmuebleDueno cli = itVendedores.next();
 
 			SimpleDateFormat sdf = new SimpleDateFormat("MMyyyy");
 			SimpleDateFormat sdf1 = new SimpleDateFormat("dd-MM-yyyy");
@@ -65,7 +69,7 @@ public class HomeController implements Initializable {
 			try {
 				
 				date = sdf.parse(StringUtils.leftPad(String.valueOf(cli.getMesanio()), 6, "0"));
-				listaAlquileres.add(new AlquileresView(Utils.formatearNomApe(cli.getApellido(), cli.getNombre()), 
+				listaAlquileres.add(new AlquileresPagosView(Utils.formatearNomApe(cli.getApellido(), cli.getNombre()), 
 						cli.getCalle()
 						,cli.getCalleNro()
 						, cli.getCallePiso()
@@ -89,12 +93,12 @@ public class HomeController implements Initializable {
 		TablasUtils.armarColumnasHome(tableDataInquilino);
 		tableDataInquilino.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 		//TableColumn<String, String> actionCol = new TableColumn<String, String>("Cobrar");
-		TableColumn<AlquileresView, String> actionCol =  (TableColumn <AlquileresView, String>) tableDataInquilino.getColumns().get(4);
-		actionCol.setCellFactory(new Callback<TableColumn<AlquileresView, String>, TableCell<AlquileresView, String>>() {
+		TableColumn<AlquileresPagosView, String> actionCol =  (TableColumn <AlquileresPagosView, String>) tableDataInquilino.getColumns().get(4);
+		actionCol.setCellFactory(new Callback<TableColumn<AlquileresPagosView, String>, TableCell<AlquileresPagosView, String>>() {
 
 					@Override
-					public TableCell<AlquileresView, String> call(TableColumn<AlquileresView, String> arg0) {
-						final TableCell<AlquileresView,String> cell = new TableCell<AlquileresView,String>() {
+					public TableCell<AlquileresPagosView, String> call(TableColumn<AlquileresPagosView, String> arg0) {
+						final TableCell<AlquileresPagosView,String> cell = new TableCell<AlquileresPagosView,String>() {
 							@Override
 							public void updateItem(String value, boolean empty) {
 								super.updateItem(value, empty);
@@ -102,19 +106,20 @@ public class HomeController implements Initializable {
 								final VBox vbox = new VBox(1);
 								//Image image = new Image(getClass().getResourceAsStream("/inmobiliaria/cash.png"));
 								//Button button = new Button("Cobrar", new ImageView(image));
-								Button button = new Button("Cobrar");
+								Button button = new Button("Ver");
 								button.getStyleClass().add("button");
 								button.setStyle("-fx-padding: 2;");
 								button.minWidth(80);
-								final TableCell<AlquileresView,String> c = this;
+								final TableCell<AlquileresPagosView,String> c = this;
 								button.setOnAction(new EventHandler<ActionEvent>() {
 									@Override
 									public void handle(ActionEvent event) {
 										TableRow tableRow = c.getTableRow();
-										AlquileresView adl = (AlquileresView)tableRow.getItem();
-										App.getInstance().setAlquilerViewHome(adl);
+										AlquileresPagosView adl = (AlquileresPagosView)tableRow.getItem();
+										//App.getInstance().setAlquilerViewHome(adl);
 										try {
-											App.getInstance().replaceSceneContent("pagarCuota.fxml");
+											ManagerReporte.generarComprobante(100,(IAlquileresView)adl);
+											//App.getInstance().replaceSceneContent("pagarCuota.fxml");
 										} catch (Exception e) {
 											// TODO Auto-generated catch block
 											e.printStackTrace();
@@ -130,34 +135,6 @@ public class HomeController implements Initializable {
 					}
 
 				});
-
-
-//		//7777777
-//		
-// ContextMenu cm = new ContextMenu();
-//		MenuItem cmItem1 = new MenuItem("Copy Image");
-//		cmItem1.setOnAction(new EventHandler<ActionEvent>() {
-//		    public void handle(ActionEvent e) {
-//		        Clipboard clipboard = Clipboard.getSystemClipboard();
-//		        ClipboardContent content = new ClipboardContent();
-//		        //content.putImage(pic.getImage());
-//		        clipboard.setContent(content);
-//		    }
-//		});
-//
-//		cm.getItems().add(cmItem1);
-//		tableDataInquilino.setContextMenu(cm);
-////		tableDataInquilino.buildEventDispatchChain(arg0)
-////		tableDataInquilino.getContextMenu().addEventHandler(MouseEvent.MOUSE_CLICKED,
-////		    new EventHandler<MouseEvent>() {
-////		        @Override public void handle(MouseEvent e) {
-////		           // if (e.getButton() == MouseButton.SECONDARY)  
-////		               // cm.show(pic, e.getScreenX(), e.getScreenY());
-////		        }
-////		});
-//		//777777
-		
-		
 		
 	}
 }
