@@ -1,6 +1,7 @@
 package inmobiliaria.reporte;
 
 import inmobiliaria.App;
+import inmobiliaria.interfaces.IAlquileresView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -16,17 +17,17 @@ import net.sf.jasperreports.view.JasperViewer;
 
 public class ManagerReporte {
 	
-	static public void generarComprobante(int totalServicios){
+	static public void generarComprobante(int totalServicios,IAlquileresView alqView){
 		SimpleDateFormat sdf1 = new SimpleDateFormat("dd 'de' MMMMMMMMM 'del' yyyy");
 		
-		int impor  =Integer.parseInt( App.getInstance().getAlquilerViewHome().importeProperty().getValue());
-		int porcen = Integer.parseInt(App.getInstance().getAlquilerViewHome().getPorcentajeDueno() );
+		int impor  = Integer.parseInt( alqView.importeProperty().getValue());
+		int porcen = Integer.parseInt(alqView.getPorcentajeDueno() );
 		int comi = impor * porcen/ 100;
 		int subtotal = impor - comi;
-		String cuota =  App.getInstance().getAlquilerViewHome().getIdCuota().toString();
-		String cuotaNro= App.getInstance().getAlquilerViewHome().cuotaFomateada();
+		String cuota =  alqView.getIdCuota().toString();
+		String cuotaNro= alqView.cuotaFomateada();
 		//String porcentaje = App.getInstance().getAlquilerViewHome().getPorcentajeDueno();
-		String nombredueno = App.getInstance().getAlquilerViewHome().nombreDuenoCompleta();
+		String nombredueno = alqView.nombreDuenoCompleta();
 		
 		//El importe dueno es el importe menos el porcentaje que se le cobra al dueno
 		String comision  = String.valueOf(comi);
@@ -36,11 +37,11 @@ public class ManagerReporte {
 			Map<String, Object> parameters = new HashMap<String,Object>();
 			parameters.put("cuota",cuota);
 			parameters.put("cuotaNro",cuotaNro);
-			parameters.put("nombreinquilino", App.getInstance().getAlquilerViewHome().inquilinoNombreApellidoProperty().getValue());
-			parameters.put("importe", App.getInstance().getAlquilerViewHome().importeProperty().getValue());
-			parameters.put("mesalquiler",sdf1.format(App.getInstance().getAlquilerViewHome().getFechaCuota()) );
+			parameters.put("nombreinquilino",alqView.inquilinoNombreApellidoProperty().getValue());
+			parameters.put("importe",alqView.importeProperty().getValue());
+			parameters.put("mesalquiler",sdf1.format(alqView.getFechaCuota()) );
 			parameters.put("nombredueno", nombredueno);
-			parameters.put("calle",  App.getInstance().getAlquilerViewHome().calleCompleta());
+			parameters.put("calle", alqView.calleCompleta());
 			parameters.put("fechaDelDia", sdf1.format(Calendar.getInstance().getTime()));
 			parameters.put("importeDueno", String.valueOf(impor));
 			parameters.put("comision", String.valueOf(comision));

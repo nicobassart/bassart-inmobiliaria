@@ -49,20 +49,14 @@ public class ModificacionPersonaController implements Initializable {
     	Session session = SessionManager.getSession();
 
     	session.beginTransaction();
-
-		BorderPane par = (BorderPane) App.getInstance().getScene().getRoot();
-
-		GridPane grid = (GridPane) par.getCenter();
-
-		ChoiceBox<String> tab = (ChoiceBox<String> ) grid.getChildren().get(12);
-		
+	
 		Cliente c1 = (Cliente)App.getInstance().getPersona().getPersonaEntiti();
 		
 		c1.setNombre(nombre.getText());
 		c1.setApellido( apellido.getText());
 		c1.setTipo(Cliente.PERSONA);
 		c1.setNroDoc(Integer.parseInt(nroDoc.getText()));
-		c1.setTipoDoc(tab.getSelectionModel().getSelectedItem());
+		c1.setTipoDoc(tipoDoc.getSelectionModel().getSelectedItem());
 		c1.setTel_fijo(tel_fijo.getText());
 		c1.setTel_celular(tel_celular.getText());
 		c1.setTel_opcional(tel_opcional.getText());

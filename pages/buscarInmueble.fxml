@@ -13,9 +13,10 @@
     <fx:include source="footer.fxml" />
   </bottom>
   <center>
-    <GridPane alignment="TOP_CENTER" hgap="3.0" style="-fx-padding: 10 10 10 10" styleClass="gradient">
+    <GridPane alignment="TOP_CENTER" hgap="3.0" style="-fx-padding: 10 10 10 10" styleClass="gradient" >
       <children>
         <TextField fx:id="filterField" styleClass="search-box-field" promptText="Buscar inmueble.."  prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+		
         <TableView id="InmueblesView" fx:id="tableDataInmuebles" prefWidth="352.0" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="3">
           <columns>
             <TableColumn text="Calle" />
