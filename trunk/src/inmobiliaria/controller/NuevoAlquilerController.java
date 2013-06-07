@@ -167,23 +167,22 @@ public class NuevoAlquilerController  implements Initializable  {
 		String errorAcum="";
 		error.setText("");
 
-		if(!UtilValidarCampos.notEmptyString(fechaInicio.getText())) errorAcum += "Debe ingresar una fecha de inicio.";
+		if(!UtilValidarCampos.notEmptyString(fechaInicio.getText())) errorAcum += "Debe ingresar una fecha de inicio.\n";
 		
-		if(!UtilValidarCampos.notEmptyString(fechaFin.getText())) errorAcum += "Debe ingresar una fecha de fin.";
+		if(!UtilValidarCampos.notEmptyString(fechaFin.getText())) errorAcum += "Debe ingresar una fecha de fin.\n";
 			
-		if(!UtilValidarCampos.notEmptyString(importeInquilino.getText())) errorAcum += "Debe ingresar un importe Inquilino.";
+		if(!UtilValidarCampos.notEmptyString(importeInquilino.getText())) errorAcum += "Debe ingresar un importe Inquilino.\n";
 		
-		if(!UtilValidarCampos.isNumeric(importeInquilino.getText())) errorAcum += "Debe ingresar un importe númerico.";
+		if(!UtilValidarCampos.isNumeric(importeInquilino.getText())) errorAcum += "Debe ingresar un importe númerico.\n";
 		
-		if(!UtilValidarCampos.validarFormatoFecha(fechaFin.getText())) errorAcum += "La fecha fin debe tener el siguiente formato DD-MM-AAAA.";
+		if(!UtilValidarCampos.validarFormatoFecha(fechaFin.getText())) errorAcum += "La fecha fin debe tener el siguiente formato DD-MM-AAAA.\n";
 		
-		if(!UtilValidarCampos.validarFormatoFecha(fechaInicio.getText())) errorAcum += "La fecha inicio debe tener el siguiente formato DD-MM-AAAA.";
+		if(!UtilValidarCampos.validarFormatoFecha(fechaInicio.getText())) errorAcum += "La fecha inicio debe tener el siguiente formato DD-MM-AAAA.\n";
 		
-		if(!UtilValidarCampos.validarDiferenciaFechas(fechaInicio.getText(),fechaFin.getText())) errorAcum += "La fecha inicio de contrato debe ser mayor a la fecha de fin de contrato.";
+		if(!UtilValidarCampos.validarDiferenciaFechas(fechaInicio.getText(),fechaFin.getText())) errorAcum += "La fecha inicio de contrato debe ser mayor a la fecha de fin de contrato.\n";
 		
-			
-		if(!errorAcum.isEmpty()){ 
-			error.setText(errorAcum); 
+		if(!errorAcum.isEmpty()){
+			MessageBox a = new MessageBox((App.getInstance().getStage()),errorAcum);
 			return false;
 		}
 	
@@ -201,13 +200,13 @@ public class NuevoAlquilerController  implements Initializable  {
 		
 		if(!UtilValidarCampos.notEmptyString(calle2.getText())) errorAcum += "Debe buscar una vivienda.\n";
 		
-		if(!UtilValidarCampos.notEmptyString(porcentajeDueno2.getText())) errorAcum += "Completar campo Cobrar Due�o con un porcentaje de comisi�n.\n";
+		if(!UtilValidarCampos.notEmptyString(porcentajeDueno2.getText())) errorAcum += "Completar campo Cobrar Dueño con un porcentaje de comisión.\n";
 		
 		if(!UtilValidarCampos.notEmptyString(importeDeposito2.getText())) errorAcum += "Completar campo importe deposito , si no tiene deposito ingresar 0.\n";
 		
-		if(!UtilValidarCampos.isNumeric(importeDeposito2.getText())) errorAcum += "El importe deposito debe ser numerico.\n";
+		if(!UtilValidarCampos.isNumeric(importeDeposito2.getText())) errorAcum += "El importe deposito debe ser númerico.\n";
 		
-		if(!UtilValidarCampos.isNumeric(porcentajeDueno2.getText())) errorAcum += "El porcentaje de comisi�n debe ser entre el 0 y el 80, sin el signo %.\n";
+		if(!UtilValidarCampos.isNumeric(porcentajeDueno2.getText())) errorAcum += "El porcentaje de comisión debe ser entre el 0 y el 80, sin el signo %.\n";
 		
 		if(!UtilValidarCampos.isNumeric(importeInquilino.getText())) errorAcum += "Debe ingresar un importe a cobrar al inquilino.\n";
 		

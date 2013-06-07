@@ -6,14 +6,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.ToolBar;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
 
 public class HeaderController implements Initializable  {
 	@FXML private Label titulo;
@@ -114,35 +112,6 @@ public class HeaderController implements Initializable  {
 		windowButtons = new WindowButtons(App.getInstance().getStage());
 
 		toolBar.getItems().add(windowButtons);
-
-//		// add window header double clicking
-//		toolBar.setonMouseClicked(new EventHandler<MouseEvent>() {
-//			@Override
-//			public void handle(MouseEvent event) {
-//				if (event.getClickCount() == 2) {
-//					windowButtons.toogleMaximized();
-//				}
-//			}
-//		});
-
-		// add window dragging
-//		toolBar.setOnMousePressed(new EventHandler<MouseEvent>() {
-//			@Override
-//			public void handle(MouseEvent event) {
-//				mouseDragOffsetX = event.getSceneX();
-//				mouseDragOffsetY = event.getSceneY();
-//			}
-//		});
-
-//		toolBar.setOnMouseDragged(new EventHandler<MouseEvent>() {
-//			@Override
-//			public void handle(MouseEvent event) {
-//				if (!windowButtons.isMaximized()) {
-//					App.getInstance().getStage().setX(event.getScreenX()-mouseDragOffsetX);
-//					App.getInstance().getStage().setY(event.getScreenY()-mouseDragOffsetY);
-//				}
-//			}
-//		});
 	}
 	@FXML
 	public void onMouseClicked(MouseEvent event) {

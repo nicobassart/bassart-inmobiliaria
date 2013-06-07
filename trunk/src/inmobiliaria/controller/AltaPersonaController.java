@@ -83,11 +83,11 @@ public class AltaPersonaController implements Initializable {
 		
 		if(!UtilValidarCampos.notEmptyString(nombre2.getText())) errorAcum += "Debe ingresar nombre.\n";
 			
-		if(!UtilValidarCampos.notEmptyString(nroDoc2.getText())) errorAcum += "Debe ingresar número de documento.\n";
+		if(!UtilValidarCampos.notEmptyString(nroDoc2.getText())) errorAcum += "Debe ingresar nÃºmero de documento.\n";
 			
 		if(!UtilValidarCampos.notEmptyString(email2.getText())) errorAcum += "Debe ingresar email.\n";
 		
-		if(!UtilValidarCampos.isNumeric(nroDoc2.getText())) errorAcum+= ("El número de documento debe ser númerico.\n");
+		if(!UtilValidarCampos.isNumeric(nroDoc2.getText())) errorAcum+= ("El nÃºmero de documento debe ser nÃºmerico.\n");
 		
 		if(!errorAcum.isEmpty()){ 
 			MessageBox a = new MessageBox((App.getInstance().getStage()),errorAcum);
