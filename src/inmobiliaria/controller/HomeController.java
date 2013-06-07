@@ -20,14 +20,10 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
-import javafx.scene.input.Clipboard;
-import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
@@ -121,6 +117,7 @@ public class HomeController implements Initializable {
 										}
 									}
 								});
+								button.setVisible((c.getTableView().getItems().size()>c.getIndex()));
 								vbox.getChildren().add(button);
 								setGraphic(vbox);
 							}
@@ -156,8 +153,5 @@ public class HomeController implements Initializable {
 ////		        }
 ////		});
 //		//777777
-		
-		
-		
 	}
 }
