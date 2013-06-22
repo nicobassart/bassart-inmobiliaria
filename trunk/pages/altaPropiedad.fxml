@@ -29,7 +29,8 @@
                 <TextField fx:id="calleNro" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
                 <TextField fx:id="callePiso" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
                 <TextField fx:id="calleDpto" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-                <ChoiceBox fx:id="choice" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <ChoiceBox fx:id="choice" GridPane.columnIndex="1" GridPane.rowIndex="5"  />
+                <!-- ChoiceBox fx:id="choiceLocalidad" GridPane.columnIndex="1" GridPane.rowIndex="6" /-->
                 <TextField fx:id="localidad" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
  
                 <Button text="%common.guardar" defaultButton="true"  GridPane.columnIndex="1" GridPane.rowIndex="7" onAction="#processUpdate" />

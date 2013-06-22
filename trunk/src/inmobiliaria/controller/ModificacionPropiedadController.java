@@ -44,6 +44,7 @@ public class ModificacionPropiedadController implements Initializable {
     		calleNro.setText(App.getInstance().getInmueble().getInmuebleEntiti().getCalleNro());
     		callePiso.setText(App.getInstance().getInmueble().getInmuebleEntiti().getCallePiso());
     		calleDpto.setText(App.getInstance().getInmueble().getInmuebleEntiti().getCalleDpto());
+    		localidad.setText(App.getInstance().getInmueble().getInmuebleEntiti().getLocalidad());
     		
     		
     		
@@ -61,7 +62,7 @@ public class ModificacionPropiedadController implements Initializable {
 		App.getInstance().getInmueble().getInmuebleEntiti().setCalleNro(calleNro.getText());
 		App.getInstance().getInmueble().getInmuebleEntiti().setCalleDpto(calleDpto.getText());
 		App.getInstance().getInmueble().getInmuebleEntiti().setCallePiso(callePiso.getText());
-		App.getInstance().getInmueble().getInmuebleEntiti().setLocalidad(1);
+		App.getInstance().getInmueble().getInmuebleEntiti().setLocalidad(localidad.getText());
 		App.getInstance().getInmueble().getInmuebleEntiti().setProvincia(comboProvincia.selectionModelProperty().getValue().getSelectedIndex());
 		session.update(App.getInstance().getInmueble().getInmuebleEntiti());
 

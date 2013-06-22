@@ -2,7 +2,6 @@ package inmobiliaria.model;
 
 import inmobiliaria.entities.Alquileres;
 import inmobiliaria.entities.CuotasInquilinosPersonaInmuebleDueno;
-import inmobiliaria.entities.CuotasPagasInquilinosPersonaInmuebleDueno;
 import inmobiliaria.interfaces.IAlquileresView;
 import inmobiliaria.utils.DateUtil;
 import inmobiliaria.utils.Utils;
