@@ -1,14 +1,12 @@
 package inmobiliaria.model;
 
 import inmobiliaria.entities.Alquileres;
-import inmobiliaria.entities.CuotasInquilinosPersonaInmuebleDueno;
 import inmobiliaria.entities.CuotasPagasInquilinosPersonaInmuebleDueno;
 import inmobiliaria.interfaces.IAlquileresView;
 import inmobiliaria.utils.DateUtil;
 import inmobiliaria.utils.Utils;
 
 import java.io.Serializable;
-import java.lang.reflect.Constructor;
 import java.util.Date;
 
 import javafx.beans.property.SimpleStringProperty;

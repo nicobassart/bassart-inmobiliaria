@@ -13,11 +13,11 @@ public class Inmueble implements Serializable {
     private String calleDpto;
     private int provincia;
 
-	private int localidad;
+	private String localidad;
 
     public Inmueble() {
     }
-    public Inmueble(String calle, String calleNro, String callePiso, String calleDpto,int provincia, int localidad,Persona persona)
+    public Inmueble(String calle, String calleNro, String callePiso, String calleDpto,int provincia, String localidad,Persona persona)
     {
         setCalle(calle);
         setCalleNro(calleNro);
@@ -69,10 +69,10 @@ public class Inmueble implements Serializable {
 	public void setProvincia(int provincia) {
 		this.provincia = provincia;
 	}
-	public int getLocalidad() {
+	public String getLocalidad() {
 		return localidad;
 	}
-	public void setLocalidad(int localidad) {
+	public void setLocalidad(String localidad) {
 		this.localidad = localidad;
 	}
 	public Persona getPersona() {
