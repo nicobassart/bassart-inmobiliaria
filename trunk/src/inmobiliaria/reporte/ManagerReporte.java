@@ -55,7 +55,7 @@ public class ManagerReporte {
 
 			JasperPrint print = JasperFillManager.fillReport(App.class.getResourceAsStream("reporte//comprobante_limpio.jasper"), parameters, new JRBeanCollectionDataSource(colec));
 			
-			JasperViewer.viewReport(print);
+			JasperViewer.viewReport(print,false);
 //			JasperViewer.exportReportToPdfFile(print,"C:\\prueba\\comprobante_" +  nombredueno +"_" + cuota +".pdf");
 //			try {
 //				File path = new File ("C:\\prueba\\comprobante_" +  nombredueno +"_" + cuota +".pdf");
