@@ -6,6 +6,9 @@ import inmobiliaria.model.Inmueble;
 import inmobiliaria.model.Persona;
 
 import java.awt.Toolkit;
+import java.io.File;
+import java.net.URL;
+import java.security.CodeSource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -91,16 +94,21 @@ public class App extends Application {
     }
         
     public Parent replaceSceneContent(String fxml) throws Exception {
-    	Logger.getLogger(App.class.getName()).log(Level.INFO, "Direcciona a la pagina " + fxml );
     	
     	pageAnterior.add(fxml);
     	
     	titulo =  (fxml.split(".fxml")[0]).toUpperCase();
-        Parent page = (Parent) FXMLLoader.load(App.class.getResource("../" + fxml), ResourceBundle.getBundle("boundle"), new JavaFXBuilderFactory());
+    	ResourceBundle bundle = ResourceBundle.getBundle("boundle");
+
+    	URL url = App.class.getResource("/" + fxml);
+
+    	Logger.getLogger(App.class.getName()).log(Level.INFO, "Direcciona a la pagina " + url+ " Ubicación: " + App.class.getPackage());
+
+        Parent page = (Parent) FXMLLoader.load(url, bundle, new JavaFXBuilderFactory());
         Scene scene = stage.getScene();
         if (scene == null) {
             scene = new Scene(page, Toolkit.getDefaultToolkit().getScreenSize().getWidth(), Toolkit.getDefaultToolkit().getScreenSize().getHeight() - 70);
-            scene.getStylesheets().add(App.class.getResource("../styles/StyleSheet.css").toExternalForm());
+            scene.getStylesheets().add(App.class.getResource("/styles/StyleSheet.css").toExternalForm());
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);
