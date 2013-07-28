@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="inmobiliaria.entities.CuotasInquilinosPersonaInmuebleDueno"  table="cuotas_inquilinos_persona_inmueble_dueno" >
+    <class name="inmobiliaria.entities.CuotasInquilinosPersonaInmuebleDueno"  table="cuot_inqui_pers_inmu_dueno" >
         <id name="idcuota" column="idcuota">
 			<generator class="increment"/>
         </id>
