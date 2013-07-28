@@ -40,9 +40,10 @@ public abstract class SessionManager {
 
             // Registra los mappers en la configuracion
             registerMappers(config);
-
+            //Version Mysql
+            //config.setProperties( getHibernateProperties() );
             // Establece las propiedades de configuracion
-            config.setProperties( getHibernateProperties() );
+            config.setProperties( getHibernatePropertiesFirebird());
 
             // Guarda la fabrica de sesiones
             factory = config.buildSessionFactory();
@@ -79,6 +80,34 @@ public abstract class SessionManager {
         System.out.println("Conecta");
         return props;
       
+    }
+    
+    private static Properties getHibernatePropertiesFirebird()
+    {
+    	// Instancia un objeto del tipo Properties
+    	Properties props = new Properties();
+    	
+    	// Establece el driver de conexion dependiente del RDBMS
+    	props.put("hibernate.connection.driver_class", "org.firebirdsql.jdbc.FBDriver");
+    	
+    	// Establece la url de conexion dependiente del RDBMS
+    	props.put("hibernate.connection.url", "jdbc:firebirdsql:embedded:database//INMOBILIARIA.FDB");
+    	// Establece el usuario
+    	props.put("hibernate.connection.username", "sysdba");
+    	
+    	// Establece la clave
+    	props.put("hibernate.connection.password", "masterkey");
+    	
+    	// Establece el dialecto a utilizar
+    	props.put("hibernate.dialect", "org.hibernate.dialect.FirebirdDialect");
+    	
+    	// Establece el uso de logging, debera existir el archivo log4j.properties
+    	props.put("hibernate.show_sql", "true");
+    	
+    	// Retorna las propiedades
+    	System.out.println("Conecta");
+    	return props;
+    	
     }
     
     private static void registerMappers(Configuration config) throws MappingException
