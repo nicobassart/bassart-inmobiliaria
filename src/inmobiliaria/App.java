@@ -6,9 +6,8 @@ import inmobiliaria.model.Inmueble;
 import inmobiliaria.model.Persona;
 
 import java.awt.Toolkit;
-import java.io.File;
+import java.lang.reflect.Field;
 import java.net.URL;
-import java.security.CodeSource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -64,8 +63,29 @@ public class App extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
+    /**
+     * Sets the java library path to the specified path
+     *
+     * @param path the new library path
+     * @throws Exception
+     */
+    public static void setLibraryPath(String path) throws Exception {
+        System.setProperty("java.library.path", path);
+     
+        //set sys_paths to null
+        final Field sysPathsField = ClassLoader.class.getDeclaredField("sys_paths");
+        sysPathsField.setAccessible(true);
+        sysPathsField.set(null, null);
+    }
+    
     public void start(Stage primaryStage) {
+    	try {
+			App.setLibraryPath(".//dlls");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	//System.setProperty("java.library.path", "C://Users//Nico//Desktop//Jaybird-2.2.3JDK_1.6");
 //    	   icono=new ImageIcon(getClass().getResource("../img/logo.png"));
 //    	   fondo=new ImageIcon(getClass().getResource("../img/logo.png"));
 //    	   trayicon=new TrayIcon(icono.getImage(),"Java Zone",null);
