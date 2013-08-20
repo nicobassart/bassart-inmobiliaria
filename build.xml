@@ -28,17 +28,17 @@
 			<manifest>
 				<attribute name="Implementation-Vendor" value="${application.vendor}" />
 				<attribute name="Implementation-Title" value="${application.title}" />
-				<attribute name="Implementation-Version" value="1.0" />
+				<attribute name="Implementation-Version" value="2.0" />
 			</manifest>
 
 			<!-- Define what files to include -->
 			<fileset dir="${build.classes.dir}" />
 		</fx:jar>
 
-		<fx:signjar keyStore="${basedir}/keygen/applet-integracion-device.jks" destdir="dist" alias="applet-integracion-device" storePass="applet-integracion-device" keyPass="applet-integracion-device">
+		<!--fx:signjar keyStore="${basedir}/keygen/keystore.jks" destdir="dist" alias="bassart" storePass="bassart" keyPass="password">
 			<fileset dir="dist" />
 			<fileset dir="libs" />
-		</fx:signjar>
+		</fx:signjar-->
 
 		<fx:deploy width="${applet.width}" height="${applet.height}" includeDT="true" outdir="${basedir}/${dist.dir}" embedJNLP="true" outfile="${application.title}">
 
@@ -49,7 +49,13 @@
 			<fx:info title="${application.title}" vendor="${application.vendor}" />
 
 			<!-- Request elevated permissions -->
-			<!--fx:permissions elevate="true" /-->
+			<fx:permissions elevated="true" />
+			
+			<fx:platform javafx="2.1+">
+			    <!--fx:jvmarg value="-Xmx400m"/>
+			    <fx:jvmarg value="-verbose:jni"/>
+			    <property name="java.library.path" value=".//dlls"/-->
+			</fx:platform>			
 		</fx:deploy>
 
 	</target>
