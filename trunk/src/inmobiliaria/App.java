@@ -80,7 +80,16 @@ public class App extends Application {
     
     public void start(Stage primaryStage) {
     	try {
-    		App.setLibraryPath(".//dlls_32_1.6");
+    		//Para iniciar con la version de 32
+    		//App.setLibraryPath(".//dlls_32_1.7");
+    		
+    		//Para iniciar con la version de 64
+    		//App.setLibraryPath(".//dlls_64_1.7");
+    		
+    		//Para compilar produccion
+			App.setLibraryPath(".//dlls");
+			
+			//Otro ejemplo
 			//App.setLibraryPath("C:\\Users\\Nico\\GestionInmobiliaria2\\prog\\dlls");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
