@@ -80,12 +80,13 @@ public class App extends Application {
     
     public void start(Stage primaryStage) {
     	try {
-			App.setLibraryPath(".//dlls");
+    		App.setLibraryPath(".//dlls_32_1.6");
+			//App.setLibraryPath("C:\\Users\\Nico\\GestionInmobiliaria2\\prog\\dlls");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	//System.setProperty("java.library.path", "C://Users//Nico//Desktop//Jaybird-2.2.3JDK_1.6");
+//System.setProperty("java.library.path", "C://Users//Nico//Desktop//Jaybird-2.2.3JDK_1.6");
 //    	   icono=new ImageIcon(getClass().getResource("../img/logo.png"));
 //    	   fondo=new ImageIcon(getClass().getResource("../img/logo.png"));
 //    	   trayicon=new TrayIcon(icono.getImage(),"Java Zone",null);
