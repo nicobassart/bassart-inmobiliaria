@@ -34,6 +34,9 @@ public class App extends Application {
 	private String titulo;
 	private Stage stage;
 	private int tabSeleccionado=0;
+	
+	private static double width;
+	private static double height;
 
 	private Persona persona;
     private Inmueble inmueble;
@@ -48,7 +51,13 @@ public class App extends Application {
 	public int getTabSeleccionado() {
 		return tabSeleccionado;
 	}
-	
+	public void setWidth(double val){
+		App.width=val;
+	}
+	public void setHeight(double val){
+		App.height=val;
+		
+	}
 	public void setTabSeleccionado(int tabSeleccionado) {
 		this.tabSeleccionado = tabSeleccionado;
 	}
@@ -62,6 +71,8 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+    	App.width= Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+    	App.height= Toolkit.getDefaultToolkit().getScreenSize().getHeight() - 70;
         launch(args);
     }
     /**
@@ -93,7 +104,6 @@ public class App extends Application {
 			//Otro ejemplo
 			//App.setLibraryPath("C:\\Users\\Nico\\GestionInmobiliaria2\\prog\\dlls");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 //    	   icono=new ImageIcon(getClass().getResource("../img/logo.png"));
@@ -138,15 +148,13 @@ public class App extends Application {
         Parent page = (Parent) FXMLLoader.load(url, bundle, new JavaFXBuilderFactory(),null, Charset.forName("UTF-8"));
         Scene scene = stage.getScene();
         if (scene == null) {
-            scene = new Scene(page, Toolkit.getDefaultToolkit().getScreenSize().getWidth(), Toolkit.getDefaultToolkit().getScreenSize().getHeight() - 70);
+            scene = new Scene(page, App.width, App.height);
             scene.getStylesheets().add(App.class.getResource("/styles/StyleSheet.css").toExternalForm());
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);
         }
-        stage.sizeToScene();
-        
-        
+        //stage.sizeToScene();
         return page;
     }
 	public Scene getScene(){

@@ -32,6 +32,7 @@ package inmobiliaria.controller;
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+import inmobiliaria.App;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -99,6 +100,9 @@ public class WindowButtons extends HBox{
             stage.setWidth(screen.getVisualBounds().getWidth());
             stage.setHeight(screen.getVisualBounds().getHeight());
         }
+        
+        App.getInstance().setWidth(stage.getWidth());
+        App.getInstance().setHeight(stage.getHeight());
     }
 
     public boolean isMaximized() {
