@@ -21,8 +21,8 @@
                 <Label text="%common.calleNro" GridPane.columnIndex="0" GridPane.rowIndex="3" />
                 <Label text="%common.callePiso" GridPane.columnIndex="0" GridPane.rowIndex="4" />
                 <Label text="%common.calleDpto" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-                <Label text="Provincia" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-                <Label text="Localidad" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                <Label text="%common.provincia" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                <Label text="%common.localidad" GridPane.columnIndex="0" GridPane.rowIndex="7" />
                 
                 <TextField fx:id="nombreDueno" promptText="Nombre del Dueno" GridPane.columnIndex="1" GridPane.rowIndex="1" editable="false" />
                 <TextField fx:id="calle" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="2"/>

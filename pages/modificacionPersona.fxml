@@ -19,12 +19,12 @@
             
                 <Label text="%common.nombre" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
                 <Label text="%common.apellido" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-                <Label text="Tipo Documento" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-                <Label text="Nro. Documento" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
-                <Label text="Telefono fijo" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
-                <Label text="Telefono Movil" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
-                <Label text="Telefono Opcional" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
-                <Label text="Email" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+                <Label text="%common.tipoDocumento" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <Label text="%common.nroDocumento" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <Label text="%common.telFijo" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                <Label text="%common.telMovil" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+                <Label text="%common.telOpcionall" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+                <Label text="%common.email" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
 
                 
                 

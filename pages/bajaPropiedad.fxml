@@ -21,10 +21,10 @@
                 <Label text="%common.calleNro" GridPane.columnIndex="0" GridPane.rowIndex="3" />
                 <Label text="%common.callePiso" GridPane.columnIndex="0" GridPane.rowIndex="4" />
                 <Label text="%common.calleDpto" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-                <Label text="Provincia" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-                <Label text="Localidad" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                <Label text="%common.provincia" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                <Label text="%common.localidad" GridPane.columnIndex="0" GridPane.rowIndex="7" />
                 
-                <TextField fx:id="nombreDueno" editable="false" promptText="Nombre del Dueno" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <TextField fx:id="nombreDueno" editable="false" promptText="%common.duenoNombre" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
                 <TextField fx:id="calle"    editable="false" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
                 <TextField fx:id="calleNro" editable="false" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
                 <TextField fx:id="callePiso" editable="false" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="4"/>

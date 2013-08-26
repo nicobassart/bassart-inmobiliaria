@@ -19,9 +19,9 @@
 		
         <TableView id="InmueblesView" fx:id="tableDataInmuebles" prefWidth="352.0" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="3">
           <columns>
-            <TableColumn text="Calle" />
-            <TableColumn text="Numero" />
-            <TableColumn text="Piso" />
+            <TableColumn text="%common.calle" />
+            <TableColumn text="%common.numero" />
+            <TableColumn text="%common.piso" />
             <TableColumn maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="Borrar" />
             <TableColumn maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="Editar" />
           </columns>

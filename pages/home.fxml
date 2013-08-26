@@ -17,11 +17,11 @@
       <children>
         <TableView id="AlquileresView" fx:id="tableDataInquilino" maxHeight="600.0" minHeight="200.0" minWidth="200.0" prefHeight="-1.0" prefWidth="-1.0" styleClass="table-view-1" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0">
           <columns>
-            <TableColumn maxWidth="700.0" minWidth="100.0" prefWidth="300.0" text="Nombre Inquilino" />
-            <TableColumn maxWidth="700.0" minWidth="100.0" prefWidth="300.0" text="Dirección" />
-            <TableColumn maxWidth="100.0" minWidth="80.0" prefWidth="90.0" text="Importe" />
-            <TableColumn maxWidth="100.0" minWidth="80.0" prefWidth="90.0" text="Periodo" />
-            <TableColumn maxWidth="65.0" minWidth="60.0" prefWidth="60.0" text="Cobrar" />
+            <TableColumn maxWidth="700.0" minWidth="100.0" prefWidth="300.0" text="%common.nombreInq" />
+            <TableColumn maxWidth="700.0" minWidth="100.0" prefWidth="300.0" text="%common.direccion" />
+            <TableColumn maxWidth="100.0" minWidth="80.0" prefWidth="90.0" text="%common.importe" />
+            <TableColumn maxWidth="100.0" minWidth="80.0" prefWidth="90.0" text="%common.periodo" />
+            <TableColumn maxWidth="65.0" minWidth="60.0" prefWidth="60.0" text="%common.cobrar" />
           </columns>
         </TableView>
       </children>
