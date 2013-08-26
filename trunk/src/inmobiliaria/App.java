@@ -8,6 +8,7 @@ import inmobiliaria.model.Persona;
 import java.awt.Toolkit;
 import java.lang.reflect.Field;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -84,10 +85,10 @@ public class App extends Application {
     		//App.setLibraryPath(".//dlls_32_1.7");
     		
     		//Para iniciar con la version de 64
-    		//App.setLibraryPath(".//dlls_64_1.7");
+    		App.setLibraryPath(".//dlls_64_1.7");
     		
     		//Para compilar produccion
-			App.setLibraryPath(".//dlls");
+			//App.setLibraryPath(".//dlls");
 			
 			//Otro ejemplo
 			//App.setLibraryPath("C:\\Users\\Nico\\GestionInmobiliaria2\\prog\\dlls");
@@ -95,7 +96,6 @@ public class App extends Application {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-//System.setProperty("java.library.path", "C://Users//Nico//Desktop//Jaybird-2.2.3JDK_1.6");
 //    	   icono=new ImageIcon(getClass().getResource("../img/logo.png"));
 //    	   fondo=new ImageIcon(getClass().getResource("../img/logo.png"));
 //    	   trayicon=new TrayIcon(icono.getImage(),"Java Zone",null);
@@ -133,8 +133,9 @@ public class App extends Application {
     	URL url = App.class.getResource("/" + fxml);
 
     	Logger.getLogger(App.class.getName()).log(Level.INFO, "Direcciona a la pagina " + url+ " Ubicación: " + App.class.getPackage());
+    	
 
-        Parent page = (Parent) FXMLLoader.load(url, bundle, new JavaFXBuilderFactory());
+        Parent page = (Parent) FXMLLoader.load(url, bundle, new JavaFXBuilderFactory(),null, Charset.forName("UTF-8"));
         Scene scene = stage.getScene();
         if (scene == null) {
             scene = new Scene(page, Toolkit.getDefaultToolkit().getScreenSize().getWidth(), Toolkit.getDefaultToolkit().getScreenSize().getHeight() - 70);

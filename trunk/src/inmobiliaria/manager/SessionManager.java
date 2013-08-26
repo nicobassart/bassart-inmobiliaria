@@ -63,7 +63,7 @@ public abstract class SessionManager {
         
         // Establece la url de conexion dependiente del RDBMS
         props.put("hibernate.connection.url", "jdbc:mysql://localhost:3307/inmobiliaria");
-        System.out.println("Conecta");
+
         // Establece el usuario
         props.put("hibernate.connection.username", "root");
         
@@ -97,6 +97,11 @@ public abstract class SessionManager {
     	
     	// Establece la clave
     	props.put("hibernate.connection.password", "masterkey");
+    	
+    	props.put("hibernate.connection.characterEncoding", "utf8");
+    	props.put("hibernate.connection.charSet", "utf8");
+    	props.put("hibernate.connection.useUnicode", "true");
+    	props.put("hibernate.connection.localEncoding", "utf8");
     	
     	// Establece el dialecto a utilizar
     	props.put("hibernate.dialect", "org.hibernate.dialect.FirebirdDialect");

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <?import java.lang.*?>
 <?import java.net.*?>
@@ -21,10 +21,10 @@
                 <Label text="%common.calleNro" GridPane.columnIndex="0" GridPane.rowIndex="2" />
                 <Label text="%common.callePiso" GridPane.columnIndex="0" GridPane.rowIndex="3" />
                 <Label text="%common.calleDpto" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-                <Label text="Provincia" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-                <Label text="Localidad" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                <Label text="%common.provincia" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <Label text="%common.localidad" GridPane.columnIndex="0" GridPane.rowIndex="6" />
                 
-                <TextField fx:id="nombreDueno" promptText="Nombre del Dueño" GridPane.columnIndex="1" GridPane.rowIndex="0" editable="false" />
+                <TextField fx:id="nombreDueno" promptText="%common.duenoNombre" GridPane.columnIndex="1" GridPane.rowIndex="0" editable="false" />
                 <TextField fx:id="calle" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
                 <TextField fx:id="calleNro" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
                 <TextField fx:id="callePiso" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
