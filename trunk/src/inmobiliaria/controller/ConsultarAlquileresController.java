@@ -55,8 +55,6 @@ public class ConsultarAlquileresController implements Initializable {
 
 		TablasUtils.armarColumnasConsultaAlquileres(tableDataAlquileres);
 
-		tableDataAlquileres.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-
 		TableColumn<AlquileresInmueblePersonaView, String> actionCol =  (TableColumn <AlquileresInmueblePersonaView, String>) tableDataAlquileres.getColumns().get(3);
 		actionCol.setCellFactory(new Callback<TableColumn<AlquileresInmueblePersonaView, String>, TableCell<AlquileresInmueblePersonaView, String>>() {
 			@Override
@@ -94,6 +92,7 @@ public class ConsultarAlquileresController implements Initializable {
 			}
 
 		});
+		tableDataAlquileres.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
 	}
 
