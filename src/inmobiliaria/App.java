@@ -96,10 +96,10 @@ public class App extends Application {
     		//App.setLibraryPath(".//dlls_32_1.7");
     		
     		//Para iniciar con la version de 64
-    		App.setLibraryPath(".//dlls_64_1.7");
+    		//App.setLibraryPath(".//dlls_64_1.7");
     		
     		//Para compilar produccion
-			//App.setLibraryPath(".//dlls");
+			App.setLibraryPath(".//dlls");
 			
 			//Otro ejemplo
 			//App.setLibraryPath("C:\\Users\\Nico\\GestionInmobiliaria2\\prog\\dlls");
