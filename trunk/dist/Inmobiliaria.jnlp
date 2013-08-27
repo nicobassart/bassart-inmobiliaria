@@ -11,7 +11,7 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Inmobiliaria.jar" size="185875" download="eager" />
+    <jar href="Inmobiliaria.jar" size="304379" download="eager" />
     <jar href="antlr-2.7.6.jar" size="443432" download="eager" />
     <jar href="cglib-nodep-2.1_3.jar" size="324238" download="eager" />
     <jar href="commons-beanutils-1.8.3.jar" size="232019" download="eager" />
@@ -29,11 +29,15 @@
     <jar href="hibernate3.jar" size="2217537" download="eager" />
     <jar href="itext-2.1.7.jar" size="1130070" download="eager" />
     <jar href="jasperreports-4.5.0.jar" size="3387967" download="eager" />
+    <jar href="jaybird-full-2.2.3.jar" size="938721" download="eager" />
     <jar href="jta.jar" size="8120" download="eager" />
     <jar href="lucene-core-3.2.0.jar" size="1246325" download="eager" />
     <jar href="lucene-grouping-3.2.0.jar" size="22060" download="eager" />
     <jar href="mysql-connector-java-3.1.12-bin.jar" size="446464" download="eager" />
   </resources>
+<security>
+  <all-permissions/>
+</security>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Inmobiliaria" >
     <param name="requiredFXVersion" value="2.1+"/>
   </applet>
